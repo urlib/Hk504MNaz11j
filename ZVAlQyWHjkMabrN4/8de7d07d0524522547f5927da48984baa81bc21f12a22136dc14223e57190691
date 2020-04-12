@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Language" content="en-us" />
+  <meta http-equiv="imagetoolbar" content="false" />
+  <meta name="robots" content="noindex">
+  <meta name="MSSmartTagsPreventParsing" content="true" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Deprecating OAuth Authorization API | GitHub Developer Guide</title>
+  <meta property="og:url" content="https://developer.github.com/changes/2020-02-14-deprecating-oauth-auth-endpoint/" />
+<meta property="og:site_name" content="GitHub Developer" />
+<meta property="og:title" content="Deprecating OAuth Authorization API" />
+<meta property="og:description" content="Get started with one of our guides, or jump straight into the API documentation." />
+<meta property="og:type" content="website" />
+<meta property="og:author" content="https://www.facebook.com/GitHub" />
+<meta property="og:image" content="https://og.github.com/logo/github-logo@1200x1200.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="1200" />
+<meta property="og:image" content="https://og.github.com/mark/github-mark@1200x630.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image" content="https://og.github.com/octocat/github-octocat@1200x630.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:site" content="@github" />
+<meta property="twitter:site:id" content="13334762" />
+<meta property="twitter:creator" content="@githubapi" />
+<meta property="twitter:creator:id" content="@539153822" />
+<meta property="twitter:title" content="Deprecating OAuth Authorization API" />
+<meta property="twitter:description" content="Get started with one of our guides, or jump straight into the API documentation." />
+<meta property="twitter:image:src" content="https://og.github.com/logo/github-logo@1200x1200.png" />
+<meta property="twitter:image:width" content="1200" />
+<meta property="twitter:image:height" content="1200" />
+
+  
+  <link rel="alternate" type="application/atom+xml" title="API Changes" href="/changes.atom" />
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500">
+  <link href="/assets/stylesheets/application.css" rel="stylesheet" type="text/css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="/assets/javascripts/application.js" type="text/javascript"></script>
+  
+</head>
+
+
+<body class="blog">
+  
+
+<header class="site-header">
+  <div id="header" class="container">
+    <a class="site-header-logo mt-1" href="/"><img src="/assets/images/github-developer-logo.svg" alt="GitHub Developer"></a>
+    <nav class="site-header-nav" aria-label="Main Navigation">
+      <div class="dropdown" id="api-docs-dropdown">
+          <div class="dropdown-button" tabIndex="0" aria-haspopup="true" aria-expanded="false"><span class="dropdown-button-link" tabIndex="-1">Docs</span> <div class="dropdown-caret"></div></div>
+          <div id="js-dropdown-menu" class="dropdown-menu">
+            <a class="dropdown-menu-item" href="/apps/">Apps</a>
+            <a class="dropdown-menu-item" href="/actions/">GitHub Actions</a>
+            <a class="dropdown-menu-item" href="/marketplace/">GitHub Marketplace</a>
+            <a class="dropdown-menu-item" href="/webhooks/">Webhooks</a>
+            <a class="dropdown-menu-item" href="/partnerships/">Partnerships</a>
+            <a class="dropdown-menu-item" href="/v3/">REST API v3</a>
+            <a class="dropdown-menu-item" href="/v4/">GraphQL API v4</a>
+          </div>
+      </div>
+      <a class="site-header-nav-item" href="/changes/">Blog</a>
+      <a class="site-header-nav-item" href="/forum/">Forum</a>
+      <div class="dropdown" id="versions-dropdown">
+          <div class="dropdown-button" tabIndex="0" aria-haspopup="true" aria-expanded="false"><span class="dropdown-button-link" tabIndex="-1">Versions</span> <div class="dropdown-caret"></div></div>
+          <div id="js-dropdown-menu" class="dropdown-menu">
+            <a class="dropdown-menu-item" data-proofer-ignore>GitHub.com</a>
+            
+            <a class="dropdown-menu-item" data-proofer-ignore>GitHub Enterprise Server 2.20</a>
+            
+            <a class="dropdown-menu-item" data-proofer-ignore>GitHub Enterprise Server 2.19</a>
+            
+            <a class="dropdown-menu-item" data-proofer-ignore>GitHub Enterprise Server 2.18</a>
+            
+            <a class="dropdown-menu-item" data-proofer-ignore>GitHub Enterprise Server 2.17</a>
+            
+          </div>
+      </div>
+      <form accept-charset="UTF-8" action="#" class="site-header-nav-item site-header-search">
+        <label id="search-container" class="mb-0">
+          <input type="text" id="searchfield" class="form-control" placeholder="Search…"
+            autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+          <div class="cancel-search"></div>
+          <ul id="search-results"></ul>
+        </label>
+      </form>
+    </nav>
+  </div>
+</header>
+
+
+  <div class="container">
+    
+    <section class="main pt-5 clearfix gut-3" role="main">
+      <div class="content col-md-8">
+        <div class="change" id="/changes/2020-02-14-deprecating-oauth-auth-endpoint/">
+<h2 class="title">
+  <a href="/changes/2020-02-14-deprecating-oauth-auth-endpoint/">Deprecating OAuth Authorization API</a>
+</h2>
+
+<div class="meta">
+  <ul>
+  <li class="published">
+    <span class="octicon octicon-calendar"></span>
+    February 14, 2020
+    
+  </li>
+  
+  <li class="who_when">
+    <img height="16" width="16" src="https://github.com/jovel.png" alt="Avatar for jovel" data-proofer-ignore/>
+      <a href="https://github.com/jovel" data-proofer-ignore>jovel</a>
+  </li>
+  
+  <li class="who_when">
+    <img height="16" width="16" src="https://github.com/jpemberthy.png" alt="Avatar for jpemberthy" data-proofer-ignore/>
+      <a href="https://github.com/jpemberthy" data-proofer-ignore>jpemberthy</a>
+  </li>
+  
+  <li class="who_when">
+    <img height="16" width="16" src="https://github.com/ptoomey3.png" alt="Avatar for ptoomey3" data-proofer-ignore/>
+      <a href="https://github.com/ptoomey3" data-proofer-ignore>ptoomey3</a>
+  </li>
+  
+</ul>
+</div>
+
+
+<p>As mentioned in this <a href="/changes/2019-11-05-deprecated-passwords-and-authorizations-api">previous blog post</a>, GitHub has deprecated the OAuth authorization endpoints and recommends that integrators switch to the <a href="/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow">web application flow</a> to generate access tokens.</p>
+
+<p>Since the OAuth Authorization API requires password authentication, this API will not work once <a href="/changes/2020-02-14-deprecating-password-auth">password authentication has been deprecated</a>.</p>
+
+<p>This deprecation has <strong><em>not</em></strong> been applied to GitHub Enterprise offerings, yet. Though, we still recommend GHES customers to make the changes in their applications, if possible. Please check the latest Enterprise <a href="https://enterprise.github.com/releases/">release notes</a> to learn when deprecation is initiated and on which GHES version OAuth Authorization API will be removed.</p>
+
+<h2>
+<a id="deprecation-timeline" class="anchor" href="#deprecation-timeline" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deprecation timeline</h2>
+
+<h3>
+<a id="removal-date" class="anchor" href="#removal-date" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Removal date</h3>
+
+<p>All calls to the OAuth authorization endpoints will return a status code of 404 starting on:</p>
+
+<ul>
+<li>November 13, 2020 at 4:00 PM UTC</li>
+</ul>
+
+<h3>
+<a id="brownouts" class="anchor" href="#brownouts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Brownouts</h3>
+
+<p>During a brownout, calls to the old version of the OAuth Authorization API will temporarily fail to alert users who haven't migrated their authentication calls.</p>
+
+<p>The brownouts are scheduled for:</p>
+
+<ul>
+<li>
+<p>September 30, 2020</p>
+
+<ul>
+<li>From 7:00 AM UTC - 10:00 AM UTC</li>
+<li>From 4:00 PM UTC - 7:00 PM UTC</li>
+</ul>
+</li>
+<li>
+<p>October 28, 2020</p>
+
+<ul>
+<li>From 7:00 AM UTC - 10:00 AM UTC</li>
+<li>From 4:00 PM UTC - 7:00 PM UTC</li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="changes-to-make" class="anchor" href="#changes-to-make" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Changes to make</h2>
+
+<p><strong>Calls to OAuth Authorizations API</strong></p>
+
+<p>If you're making <a href="/v3/oauth_authorizations/">OAuth Authorization API</a> calls to manage your OAuth app's authorizations or to create personal access or OAuth tokens like:</p>
+
+<pre class="highlight highlight-bash"><code>curl -u my_username:my_password -X POST <span class="s2">"https://api.github.com/authorizations"</span> -d <span class="s1">'{"scopes":["public_repo"], "note":"my token", "client_id":"my_client_id", "client_secret":"my_client_secret"}'</span>
+</code></pre>
+
+
+<p>Then you must switch to the <a href="/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow">web application flow</a> to generate access tokens.</p>
+
+<h2>
+<a id="endpoints-affected" class="anchor" href="#endpoints-affected" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Endpoints affected</h2>
+
+<p>The following list of <strong>OAuth authorization endpoints</strong> are deprecated:</p>
+
+<ul>
+<li><a href="/v3/oauth_authorizations/#list-your-authorizations"><code>GET /authorizations</code></a></li>
+<li><a href="/v3/oauth_authorizations/#get-a-single-authorization"><code>GET /authorizations/:authorization_id</code></a></li>
+<li><a href="/v3/oauth_authorizations/#create-a-new-authorization"><code>POST /authorizations</code></a></li>
+<li><a href="/v3/oauth_authorizations/#get-or-create-an-authorization-for-a-specific-app"><code>PUT /authorizations/clients/:client_id</code></a></li>
+<li><a href="/v3/oauth_authorizations/#get-or-create-an-authorization-for-a-specific-app-and-fingerprint"><code>PUT /authorizations/clients/:client_id/:fingerprint</code></a></li>
+<li><a href="/v3/oauth_authorizations/#update-an-existing-authorization"><code>PATCH /authorizations/:authorization_id</code></a></li>
+<li><a href="/v3/oauth_authorizations/#delete-an-authorization"><code>DELETE /authorizations/:authorization_id</code></a></li>
+<li><a href="/v3/oauth_authorizations/#list-your-grants"><code>GET /applications/grants</code></a></li>
+<li><a href="/v3/oauth_authorizations/#get-a-single-grant"><code>GET /applications/grants/:grant_id</code></a></li>
+<li><a href="/v3/oauth_authorizations/#delete-a-grant"><code>DELETE /applications/grants/:grant_id</code></a></li>
+</ul>
+
+<p>If you have any questions or feedback, please <a href="https://github.com/contact?form%5Bsubject%5D=Deprecated+passwords+and+authorizations+api">let us know</a>!</p>
+</div>
+
+      </div>
+
+      <div class="sidebar-shell col-md-4">
+        
+        <h3>Recent Posts</h3>
+<ul class="headlines sidebar-module sidebar-menu">
+
+  <li><a href="/changes/2020-04-07-expanding-rest-api-support-for-the-triage-and-maintain-roles/">Expanding REST API support for triage and maintain roles<br /><span class="date">April 7, 2020</span></a></li>
+
+  <li><a href="/changes/2020-04-07-graduated-previews/">Shadow-cat and Gambit previews graduate<br /><span class="date">April 7, 2020</span></a></li>
+
+  <li><a href="/changes/2020-03-23-ActionsGA/">Actions API GA<br /><span class="date">March 23, 2020</span></a></li>
+
+  <li><a href="/changes/2020-03-20-temporary-graphql-explorer-downtime/">Temporary GraphQL Explorer downtime<br /><span class="date">March 20, 2020</span></a></li>
+
+  <li><a href="/changes/2020-03-06-filtering-jobs-for-a-workflow-run/">Filtering jobs for a workflow run<br /><span class="date">March 6, 2020</span></a></li>
+
+  <li><a href="/changes/2020-02-26-new-delete-reactions-endpoints/">Replacing the "Delete reactions" endpoint<br /><span class="date">February 26, 2020</span></a></li>
+
+  <li><a href="/changes/2020-02-14-deprecating-oauth-app-endpoint/">Deprecating OAuth Application API<br /><span class="date">February 14, 2020</span></a></li>
+
+  <li><a href="/changes/2020-02-14-deprecating-oauth-auth-endpoint/">Deprecating OAuth Authorization API<br /><span class="date">February 14, 2020</span></a></li>
+
+</ul>
+
+        <div class="sidebar-module notice"><a class="rss-subscribe" href="/changes.atom">Subscribe to the RSS feed</a></div>
+        
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer text-muted">
+  <div class="container">
+    <span class="footer-legal">&copy; 2020 GitHub Inc. All rights reserved.</span>
+    <span class="mega-octicon octicon-mark-github footer-mark"></span>
+    <nav class="footer-nav">
+      <a class="footer-nav-item" href="https://help.github.com/articles/github-terms-of-service">Terms of service</a>
+      <a class="footer-nav-item" href="https://github.com/site/privacy">Privacy</a>
+      <a class="footer-nav-item" href="https://github.com/security">Security</a>
+      <a class="footer-nav-item" href="https://github.com/support">Support</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-3769691-37', 'github.com');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
