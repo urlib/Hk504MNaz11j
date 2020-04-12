@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-49925874-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-49925874-3');
+  </script>
+
+  <meta charset='utf-8'>
+  <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+
+  <title>Git - Book</title>
+
+  <link href='/favicon.ico' rel='shortcut icon' type='image/x-icon'>
+
+  <link rel="stylesheet" media="screen" href="/assets/application-5d2c8cbd740f023e85e568ce5b6004dfc124d998f32bbd82cc445d84763db9fa.css" />
+  <script src="/assets/modernize-91eb7473bfa18e104376c623be884766692c7cf93c8769aea544ad57e3ea2292.js"></script>
+  <!--[if (gte IE 6)&(lte IE 8)]>
+  <script src="/javascripts/selectivizr-min.js"></script>
+  <![endif]-->
+
+</head>
+
+<body id="documentation">
+
+  <div class="inner">
+    <header>
+
+  <a href="/"><img src="/images/logo@2x.png" width="110" height="46" alt="Git" /></a>
+  <span id="tagline"></span>
+  <script type="text/javascript">
+    var taglines = ["fast-version-control","everything-is-local","distributed-even-if-your-workflow-isnt","local-branching-on-the-cheap","distributed-is-the-new-centralized"];
+    var tagline = taglines[Math.floor(Math.random() * taglines.length)];
+    document.getElementById('tagline').innerHTML = '--' + tagline;
+  </script>
+  <form id="search" action="/search/results">
+    <input id="search-text" name="search" placeholder="Search entire site..." autocomplete="off" type="text" />
+  </form>
+  <div id="search-results"></div>
+
+</header>
+
+  </div> <!-- .inner -->
+
+    <div class="inner">
+      <div id="content-wrapper">
+        <aside class="sidebar">
+  <nav>
+    <ul>
+      <li>
+        <a href="/about">About</a>
+        <ul class="">
+          <li>
+            <a href="/about">Branching and Merging</a>
+          </li>
+          <li>
+            <a href="/about/small-and-fast">Small and Fast</a>
+          </li>
+          <li>
+            <a href="/about/distributed">Distributed</a>
+          </li>
+          <li>
+            <a href="/about/info-assurance">Data Assurance</a>
+          </li>
+          <li>
+            <a href="/about/staging-area">Staging Area</a>
+          </li>
+          <li>
+            <a href="/about/free-and-open-source">Free and Open Source</a>
+          </li>
+          <li>
+            <a href="/about/trademark">Trademark</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a class="active" href="/doc">Documentation</a>
+        <ul class="expanded">
+          <li>
+            <a href="/docs">Reference</a>
+          </li>
+          <li>
+            <a class="active" href="/book">Book</a>
+          </li>
+          <li>
+            <a href="/videos">Videos</a>
+          </li>
+          <li>
+            <a href="/doc/ext">External Links</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/downloads">Downloads</a>
+        <ul class="">
+          <li>
+            <a href="/downloads/guis">GUI Clients</a>
+          </li>
+          <li>
+            <a href="/downloads/logos">Logos</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/community">Community</a>
+      </li>
+    </ul>
+      <hr class="sidebar">
+        <p>
+This book is available in
+  <a href="/book/en">English</a>.
+</p>
+<p>
+  Full translation available in
+  <table>
+    <tr><td><a href="/book/bg">български език</a>,</td></tr>
+    <tr><td><a href="/book/de">Deutsch</a>,</td></tr>
+    <tr><td><a href="/book/es">Español</a>,</td></tr>
+    <tr><td><a href="/book/fr">Français</a>,</td></tr>
+    <tr><td><a href="/book/gr">Ελληνικά</a>,</td></tr>
+    <tr><td><a href="/book/ja">日本語</a>,</td></tr>
+    <tr><td><a href="/book/ko">한국어</a>,</td></tr>
+    <tr><td><a href="/book/nl">Nederlands</a>,</td></tr>
+    <tr><td><a href="/book/ru">Русский</a>,</td></tr>
+    <tr><td><a href="/book/sl">Slovenščina</a>,</td></tr>
+    <tr><td><a href="/book/tl">Tagalog</a>,</td></tr>
+    <tr><td><a href="/book/uk">Українська</a></td></tr>
+    <tr><td><a href="/book/zh">简体中文</a>,</td></tr>
+  </table>
+</p>
+<p>
+  Partial translations available in
+  <table>
+    <tr><td><a href="/book/cs">Čeština</a>,</td></tr>
+    <tr><td><a href="/book/mk">Македонски</a>,</td></tr>
+    <tr><td><a href="/book/pl">Polski</a>,</td></tr>
+    <tr><td><a href="/book/sr">Српски</a>,</td></tr>
+    <tr><td><a href="/book/uz">Ўзбекча</a>,</td></tr>
+    <tr><td><a href="/book/zh-tw">繁體中文</a>,</td></tr>
+  </table>
+</p>
+<p>
+  Translations started for
+  <table>
+    <tr><td><a href="/book/az">azərbaycan dili</a>,</td></tr>
+    <tr><td><a href="/book/be">Беларуская</a>,</td></tr>
+    <tr><td><a href="/book/fa" dir="rtl">فارسی</a>,</td></tr>
+    <tr><td><a href="/book/id">Indonesian</a>,</td></tr>
+    <tr><td><a href="/book/it">Italiano</a>,</td></tr>
+    <tr><td><a href="/book/ms">Bahasa Melayu</a>,</td></tr>
+    <tr><td><a href="/book/pt-br">Português (Brasil)</a>,</td></tr>
+    <tr><td><a href="/book/pt-pt">Português (Portugal)</a>,</td></tr>
+    <tr><td><a href="/book/sv">Svenska</a>,</td></tr>
+    <tr><td><a href="/book/tr">Türkçe</a>.</td></tr>
+  </table>
+</p>
+<hr class="sidebar"/>
+<p>
+The source of this book is  <a href="https://github.com/progit2-tl/progit2">hosted on GitHub.</a></br>
+Patches, suggestions and comments are welcome.
+</p>
+
+
+  </nav>
+</aside>
+
+        <div id="content">
+          
+
+<div id='main'>
+  <h1>Book</h1>
+    <div style="float:right;margin: -20px 40px 0 40px;">
+      <img  src="/images/progit2.png" width="118" height="157"/>
+      <div style="light">2nd Edition (2014)</div>
+     </div>
+  <p>
+  The entire Pro Git book, written by Scott Chacon and Ben Straub and published by Apress, is available here. All content is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution Non Commercial Share Alike 3.0 license</a>. Print versions of the book are available on <a href="http://www.amazon.com/Pro-Git-Scott-Chacon/dp/1484200772?ie=UTF8&camp=1789&creative=9325&creativeASIN=1430218339&linkCode=as2&tag=git-sfconservancy-20">Amazon.com</a>.</>
+  </p>
+  <ol class='book-toc'>
+    <li class='chapter'>
+    <h2>1. <a href="/book/tl/v2/Pagsisimula-Tungkol-sa-Bersyon-Kontrol">Pagsisimula</a></h2>
+      <ol>
+            <li>
+              1.1
+              <a href="/book/tl/v2/Pagsisimula-Tungkol-sa-Bersyon-Kontrol">Tungkol sa Bersyon Kontrol</a>
+            </li>
+            <li>
+              1.2
+              <a href="/book/tl/v2/Pagsisimula-Isang-Maikling-Kasaysayan-ng-Git">Isang Maikling Kasaysayan ng Git</a>
+            </li>
+            <li>
+              1.3
+              <a href="/book/tl/v2/Pagsisimula-Pangunahing-Kaalaman-sa-Git">Pangunahing Kaalaman sa Git</a>
+            </li>
+            <li>
+              1.4
+              <a href="/book/tl/v2/Pagsisimula-Ang-Command-Line">Ang Command Line</a>
+            </li>
+            <li>
+              1.5
+              <a href="/book/tl/v2/Pagsisimula-Pag-install-ng-Git">Pag-install ng Git</a>
+            </li>
+            <li>
+              1.6
+              <a href="/book/tl/v2/Pagsisimula-Unang-Beses-na-Pag-Setup-ng-Git">Unang Beses na Pag-Setup ng Git</a>
+            </li>
+            <li>
+              1.7
+              <a href="/book/tl/v2/Pagsisimula-Pagkuha-ng-Tulong">Pagkuha ng Tulong</a>
+            </li>
+            <li>
+              1.8
+              <a href="/book/tl/v2/Pagsisimula-Buod">Buod</a>
+            </li>
+      </ol>
+    </li>
+    <li class='chapter'>
+    <h2>2. <a href="/book/tl/v2/Mga-Pangunahing-Kaalaman-sa-Git-Pagkuha-ng-Repositoryo-ng-Git">Mga Pangunahing Kaalaman sa Git</a></h2>
+      <ol>
+            <li>
+              2.1
+              <a href="/book/tl/v2/Mga-Pangunahing-Kaalaman-sa-Git-Pagkuha-ng-Repositoryo-ng-Git">Pagkuha ng Repositoryo ng Git</a>
+            </li>
+            <li>
+              2.2
+              <a href="/book/tl/v2/Mga-Pangunahing-Kaalaman-sa-Git-Pagtatala-ng-mga-Pagbabago-sa-Repositoryo">Pagtatala ng mga Pagbabago sa Repositoryo</a>
+            </li>
+            <li>
+              2.3
+              <a href="/book/tl/v2/Mga-Pangunahing-Kaalaman-sa-Git-Pagtitingin-sa-Kasaysayan-ng-Commit">Pagtitingin sa Kasaysayan ng Commit</a>
+            </li>
+            <li>
+              2.4
+              <a href="/book/tl/v2/Mga-Pangunahing-Kaalaman-sa-Git-Pag-Undo-ng-mga-Bagay">Pag-Undo ng mga Bagay</a>
+            </li>
+            <li>
+              2.5
+              <a href="/book/tl/v2/Mga-Pangunahing-Kaalaman-sa-Git-Paggawa-gamit-ang-mga-Remote">Paggawa gamit ang mga Remote</a>
+            </li>
+            <li>
+              2.6
+              <a href="/book/tl/v2/Mga-Pangunahing-Kaalaman-sa-Git-Pag-tag">Pag-tag</a>
+            </li>
+            <li>
+              2.7
+              <a href="/book/tl/v2/Mga-Pangunahing-Kaalaman-sa-Git-Mga-Alyas-sa-Git">Mga Alyas sa Git</a>
+            </li>
+            <li>
+              2.8
+              <a href="/book/tl/v2/Mga-Pangunahing-Kaalaman-sa-Git-Buod">Buod</a>
+            </li>
+      </ol>
+    </li>
+    <li class='chapter'>
+    <h2>3. <a href="/book/tl/v2/Pag-branch-ng-Git-Mga-Branch-sa-Maikling-Salita">Pag-branch ng Git</a></h2>
+      <ol>
+            <li>
+              3.1
+              <a href="/book/tl/v2/Pag-branch-ng-Git-Mga-Branch-sa-Maikling-Salita">Mga Branch sa Maikling Salita</a>
+            </li>
+            <li>
+              3.2
+              <a href="/book/tl/v2/Pag-branch-ng-Git-Batayan-ng-Pag-branch-at-Pag-merge">Batayan ng Pag-branch at Pag-merge</a>
+            </li>
+            <li>
+              3.3
+              <a href="/book/tl/v2/Pag-branch-ng-Git-Pamamahala-ng-Branch">Pamamahala ng Branch</a>
+            </li>
+            <li>
+              3.4
+              <a href="/book/tl/v2/Pag-branch-ng-Git-Mga-Daloy-ng-Trabaho-sa-Pag-branch">Mga Daloy ng Trabaho sa Pag-branch</a>
+            </li>
+            <li>
+              3.5
+              <a href="/book/tl/v2/Pag-branch-ng-Git-Remote-na-mga-Branch">Remote na mga Branch</a>
+            </li>
+            <li>
+              3.6
+              <a href="/book/tl/v2/Pag-branch-ng-Git-Pag-rebase">Pag-rebase</a>
+            </li>
+            <li>
+              3.7
+              <a href="/book/tl/v2/Pag-branch-ng-Git-Buod">Buod</a>
+            </li>
+      </ol>
+    </li>
+    <li class='chapter'>
+    <h2>4. <a href="/book/tl/v2/Git-sa-Server-Ang-Mga-Protokol">Git sa Server</a></h2>
+      <ol>
+            <li>
+              4.1
+              <a href="/book/tl/v2/Git-sa-Server-Ang-Mga-Protokol">Ang Mga Protokol</a>
+            </li>
+            <li>
+              4.2
+              <a href="/book/tl/v2/Git-sa-Server-Pagkuha-ng-Git-sa-isang-Server">Pagkuha ng Git sa isang Server</a>
+            </li>
+            <li>
+              4.3
+              <a href="/book/tl/v2/Git-sa-Server-Ang-paglikha-ng-iyong-Pampublikong-Susi-ng-SSH">Ang paglikha ng iyong Pampublikong Susi ng SSH</a>
+            </li>
+            <li>
+              4.4
+              <a href="/book/tl/v2/Git-sa-Server-Pag-Setup-ng-Server">Pag-Setup ng Server</a>
+            </li>
+            <li>
+              4.5
+              <a href="/book/tl/v2/Git-sa-Server-Git-Daemon">Git Daemon</a>
+            </li>
+            <li>
+              4.6
+              <a href="/book/tl/v2/Git-sa-Server-Smart-HTTP">Smart HTTP</a>
+            </li>
+            <li>
+              4.7
+              <a href="/book/tl/v2/Git-sa-Server-GitWeb">GitWeb</a>
+            </li>
+            <li>
+              4.8
+              <a href="/book/tl/v2/Git-sa-Server-GitLab">GitLab</a>
+            </li>
+            <li>
+              4.9
+              <a href="/book/tl/v2/Git-sa-Server-Mga-Opsyon-ng-Naka-host-sa-Third-Party">Mga Opsyon ng Naka-host sa Third Party</a>
+            </li>
+            <li>
+              4.10
+              <a href="/book/tl/v2/Git-sa-Server-Buod">Buod</a>
+            </li>
+      </ol>
+    </li>
+    <li class='chapter'>
+    <h2>5. <a href="/book/tl/v2/Distributed-Git-Distributed-Workflows">Distributed Git</a></h2>
+      <ol>
+            <li>
+              5.1
+              <a href="/book/tl/v2/Distributed-Git-Distributed-Workflows">Distributed Workflows</a>
+            </li>
+            <li>
+              5.2
+              <a href="/book/tl/v2/Distributed-Git-Contributing-to-a-Project">Contributing to a Project</a>
+            </li>
+            <li>
+              5.3
+              <a href="/book/tl/v2/Distributed-Git-Maintaining-a-Project">Maintaining a Project</a>
+            </li>
+            <li>
+              5.4
+              <a href="/book/tl/v2/Distributed-Git-Summary">Summary</a>
+            </li>
+      </ol>
+    </li>
+    <li class='chapter'>
+    <h2>6. <a href="/book/tl/v2/GitHub-Pag-setup-at-pagsasaayos-ng-Account">GitHub</a></h2>
+      <ol>
+            <li>
+              6.1
+              <a href="/book/tl/v2/GitHub-Pag-setup-at-pagsasaayos-ng-Account">Pag-setup at pagsasaayos ng Account</a>
+            </li>
+            <li>
+              6.2
+              <a href="/book/tl/v2/GitHub-Pag-aambag-sa-isang-Proyekto">Pag-aambag sa isang Proyekto</a>
+            </li>
+            <li>
+              6.3
+              <a href="/book/tl/v2/GitHub-Pagpapanatili-ng-isang-Proyekto">Pagpapanatili ng isang Proyekto</a>
+            </li>
+            <li>
+              6.4
+              <a href="/book/tl/v2/GitHub-Pamamahala-ng-isang-organisasyon">Pamamahala ng isang organisasyon</a>
+            </li>
+            <li>
+              6.5
+              <a href="/book/tl/v2/GitHub-Pag-iiskrip-sa-GitHub">Pag-iiskrip sa GitHub</a>
+            </li>
+            <li>
+              6.6
+              <a href="/book/tl/v2/GitHub-Buod">Buod</a>
+            </li>
+      </ol>
+    </li>
+    <li class='chapter'>
+    <h2>7. <a href="/book/tl/v2/Mga-Git-na-Kasangkapan-Pagpipili-ng-Rebisyon">Mga Git na Kasangkapan</a></h2>
+      <ol>
+            <li>
+              7.1
+              <a href="/book/tl/v2/Mga-Git-na-Kasangkapan-Pagpipili-ng-Rebisyon">Pagpipili ng Rebisyon</a>
+            </li>
+            <li>
+              7.2
+              <a href="/book/tl/v2/Mga-Git-na-Kasangkapan-Staging-na-Interactive">Staging na Interactive</a>
+            </li>
+            <li>
+              7.3
+              <a href="/book/tl/v2/Mga-Git-na-Kasangkapan-Pag-stash-at-Paglilinis">Pag-stash at Paglilinis</a>
+            </li>
+            <li>
+              7.4
+              <a href="/book/tl/v2/Mga-Git-na-Kasangkapan-Pag-sign-sa-Iyong-Trabaho">Pag-sign sa Iyong Trabaho</a>
+            </li>
+            <li>
+              7.5
+              <a href="/book/tl/v2/Mga-Git-na-Kasangkapan-Paghahanap">Paghahanap</a>
+            </li>
+            <li>
+              7.6
+              <a href="/book/tl/v2/Mga-Git-na-Kasangkapan-Pagsulat-muli-ng-Kasaysayan">Pagsulat muli ng Kasaysayan</a>
+            </li>
+            <li>
+              7.7
+              <a href="/book/tl/v2/Mga-Git-na-Kasangkapan-Ang-Reset-Demystified">Ang Reset Demystified</a>
+            </li>
+            <li>
+              7.8
+              <a href="/book/tl/v2/Mga-Git-na-Kasangkapan-Advanced-na-Pag-merge">Advanced na Pag-merge</a>
+            </li>
+            <li>
+              7.9
+              <a href="/book/tl/v2/Mga-Git-na-Kasangkapan-Ang-Rerere">Ang Rerere</a>
+            </li>
+            <li>
+              7.10
+              <a href="/book/tl/v2/Mga-Git-na-Kasangkapan-Pagdebug-gamit-ang-Git">Pagdebug gamit ang Git</a>
+            </li>
+            <li>
+              7.11
+              <a href="/book/tl/v2/Mga-Git-na-Kasangkapan-Mga-Submodule">Mga Submodule</a>
+            </li>
+            <li>
+              7.12
+              <a href="/book/tl/v2/Mga-Git-na-Kasangkapan-Pagbibigkis">Pagbibigkis</a>
+            </li>
+            <li>
+              7.13
+              <a href="/book/tl/v2/Mga-Git-na-Kasangkapan-Pagpapalit">Pagpapalit</a>
+            </li>
+            <li>
+              7.14
+              <a href="/book/tl/v2/Mga-Git-na-Kasangkapan-Kredensyal-na-ImbakanCredential-Storage">Kredensyal na ImbakanCredential Storage</a>
+            </li>
+            <li>
+              7.15
+              <a href="/book/tl/v2/Mga-Git-na-Kasangkapan-Buod">Buod</a>
+            </li>
+      </ol>
+    </li>
+    <li class='chapter'>
+    <h2>8. <a href="/book/tl/v2/Pag-aangkop-sa-Sariling-Pangangailagan-ng-Git-Kompigurasyon-ng-Git">Pag-aangkop sa Sariling Pangangailagan ng Git</a></h2>
+      <ol>
+            <li>
+              8.1
+              <a href="/book/tl/v2/Pag-aangkop-sa-Sariling-Pangangailagan-ng-Git-Kompigurasyon-ng-Git">Kompigurasyon ng Git</a>
+            </li>
+            <li>
+              8.2
+              <a href="/book/tl/v2/Pag-aangkop-sa-Sariling-Pangangailagan-ng-Git-Mga-Katangian-ng-Git">Mga Katangian ng Git</a>
+            </li>
+            <li>
+              8.3
+              <a href="/book/tl/v2/Pag-aangkop-sa-Sariling-Pangangailagan-ng-Git-Mga-Hook-ng-Git">Mga Hook ng Git</a>
+            </li>
+            <li>
+              8.4
+              <a href="/book/tl/v2/Pag-aangkop-sa-Sariling-Pangangailagan-ng-Git-An-Example-Git-Enforced-Policy">An Example Git-Enforced Policy</a>
+            </li>
+            <li>
+              8.5
+              <a href="/book/tl/v2/Pag-aangkop-sa-Sariling-Pangangailagan-ng-Git-Buod">Buod</a>
+            </li>
+      </ol>
+    </li>
+    <li class='chapter'>
+    <h2>9. <a href="/book/tl/v2/Ang-Git-at-iba-pang-mga-Sistema-Git-bilang-isang-Kliyente">Ang Git at iba pang mga Sistema</a></h2>
+      <ol>
+            <li>
+              9.1
+              <a href="/book/tl/v2/Ang-Git-at-iba-pang-mga-Sistema-Git-bilang-isang-Kliyente">Git bilang isang Kliyente</a>
+            </li>
+            <li>
+              9.2
+              <a href="/book/tl/v2/Ang-Git-at-iba-pang-mga-Sistema-Paglilipat-sa-Git">Paglilipat sa Git</a>
+            </li>
+            <li>
+              9.3
+              <a href="/book/tl/v2/Ang-Git-at-iba-pang-mga-Sistema-Buod">Buod</a>
+            </li>
+      </ol>
+    </li>
+    <li class='chapter'>
+    <h2>10. <a href="/book/tl/v2/Mga-Panloob-ng-GIT-Plumbing-and-Porcelain">Mga Panloob ng GIT</a></h2>
+      <ol>
+            <li>
+              10.1
+              <a href="/book/tl/v2/Mga-Panloob-ng-GIT-Plumbing-and-Porcelain">Plumbing and Porcelain</a>
+            </li>
+            <li>
+              10.2
+              <a href="/book/tl/v2/Mga-Panloob-ng-GIT-Git-Objects">Git Objects</a>
+            </li>
+            <li>
+              10.3
+              <a href="/book/tl/v2/Mga-Panloob-ng-GIT-Git-References">Git References</a>
+            </li>
+            <li>
+              10.4
+              <a href="/book/tl/v2/Mga-Panloob-ng-GIT-Packfiles">Packfiles</a>
+            </li>
+            <li>
+              10.5
+              <a href="/book/tl/v2/Mga-Panloob-ng-GIT-Ang-Refspec">Ang Refspec</a>
+            </li>
+            <li>
+              10.6
+              <a href="/book/tl/v2/Mga-Panloob-ng-GIT-Transfer-Protocols">Transfer Protocols</a>
+            </li>
+            <li>
+              10.7
+              <a href="/book/tl/v2/Mga-Panloob-ng-GIT-Pagpapanatili-At-Pagbalik-ng-Datos">Pagpapanatili At Pagbalik ng Datos</a>
+            </li>
+            <li>
+              10.8
+              <a href="/book/tl/v2/Mga-Panloob-ng-GIT-Mga-Variable-sa-Kapaligiran">Mga Variable sa Kapaligiran</a>
+            </li>
+            <li>
+              10.9
+              <a href="/book/tl/v2/Mga-Panloob-ng-GIT-Buod">Buod</a>
+            </li>
+      </ol>
+    </li>
+    <li class='chapter'>
+    <h2>A1. <a href="/book/tl/v2/Appendix-A%3A-Git-in-Other-Environments-Grapikal-Interfaces">Appendix A: Git in Other Environments</a></h2>
+      <ol>
+            <li>
+              A1.1
+              <a href="/book/tl/v2/Appendix-A%3A-Git-in-Other-Environments-Grapikal-Interfaces">Grapikal Interfaces</a>
+            </li>
+            <li>
+              A1.2
+              <a href="/book/tl/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Visual-Studio">Git in Visual Studio</a>
+            </li>
+            <li>
+              A1.3
+              <a href="/book/tl/v2/Appendix-A%3A-Git-in-Other-Environments-Git-sa-Eclipse">Git sa Eclipse</a>
+            </li>
+            <li>
+              A1.4
+              <a href="/book/tl/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Bash">Git in Bash</a>
+            </li>
+            <li>
+              A1.5
+              <a href="/book/tl/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Zsh">Git in Zsh</a>
+            </li>
+            <li>
+              A1.6
+              <a href="/book/tl/v2/Appendix-A%3A-Git-in-Other-Environments-Git-sa-Powershell">Git sa Powershell</a>
+            </li>
+            <li>
+              A1.7
+              <a href="/book/tl/v2/Appendix-A%3A-Git-in-Other-Environments-Summary">Summary</a>
+            </li>
+      </ol>
+    </li>
+    <li class='chapter'>
+    <h2>A2. <a href="/book/tl/v2/Appendix-B%3A-Pag-embed-ng-Git-sa-iyong-Mga-Aplikasyon-Command-line-Git">Appendix B: Pag-embed ng Git sa iyong Mga Aplikasyon</a></h2>
+      <ol>
+            <li>
+              A2.1
+              <a href="/book/tl/v2/Appendix-B%3A-Pag-embed-ng-Git-sa-iyong-Mga-Aplikasyon-Command-line-Git">Command-line Git</a>
+            </li>
+            <li>
+              A2.2
+              <a href="/book/tl/v2/Appendix-B%3A-Pag-embed-ng-Git-sa-iyong-Mga-Aplikasyon-Libgit2">Libgit2</a>
+            </li>
+            <li>
+              A2.3
+              <a href="/book/tl/v2/Appendix-B%3A-Pag-embed-ng-Git-sa-iyong-Mga-Aplikasyon-JGit">JGit</a>
+            </li>
+      </ol>
+    </li>
+    <li class='chapter'>
+    <h2>A3. <a href="/book/tl/v2/Appendix-C%3A-Mga-Kautusan-ng-Git-Setup-at-Config">Appendix C: Mga Kautusan ng Git</a></h2>
+      <ol>
+            <li>
+              A3.1
+              <a href="/book/tl/v2/Appendix-C%3A-Mga-Kautusan-ng-Git-Setup-at-Config">Setup at Config</a>
+            </li>
+            <li>
+              A3.2
+              <a href="/book/tl/v2/Appendix-C%3A-Mga-Kautusan-ng-Git-Pagkuha-at-Paglikha-ng-Mga-Proyekto">Pagkuha at Paglikha ng Mga Proyekto</a>
+            </li>
+            <li>
+              A3.3
+              <a href="/book/tl/v2/Appendix-C%3A-Mga-Kautusan-ng-Git-Pangunahing-Snapshotting">Pangunahing Snapshotting</a>
+            </li>
+            <li>
+              A3.4
+              <a href="/book/tl/v2/Appendix-C%3A-Mga-Kautusan-ng-Git-Branching-at-Merging">Branching at Merging</a>
+            </li>
+            <li>
+              A3.5
+              <a href="/book/tl/v2/Appendix-C%3A-Mga-Kautusan-ng-Git-Pagbabahagi-at-Pagbabago-ng-mga-Proyekto">Pagbabahagi at Pagbabago ng mga Proyekto</a>
+            </li>
+            <li>
+              A3.6
+              <a href="/book/tl/v2/Appendix-C%3A-Mga-Kautusan-ng-Git-Pagsisiyasat-at-Paghahambing">Pagsisiyasat at Paghahambing</a>
+            </li>
+            <li>
+              A3.7
+              <a href="/book/tl/v2/Appendix-C%3A-Mga-Kautusan-ng-Git-Debugging">Debugging</a>
+            </li>
+            <li>
+              A3.8
+              <a href="/book/tl/v2/Appendix-C%3A-Mga-Kautusan-ng-Git-Patching">Patching</a>
+            </li>
+            <li>
+              A3.9
+              <a href="/book/tl/v2/Appendix-C%3A-Mga-Kautusan-ng-Git-Email">Email</a>
+            </li>
+            <li>
+              A3.10
+              <a href="/book/tl/v2/Appendix-C%3A-Mga-Kautusan-ng-Git-External-Systems">External Systems</a>
+            </li>
+            <li>
+              A3.11
+              <a href="/book/tl/v2/Appendix-C%3A-Mga-Kautusan-ng-Git-Administration">Administration</a>
+            </li>
+            <li>
+              A3.12
+              <a href="/book/tl/v2/Appendix-C%3A-Mga-Kautusan-ng-Git-Pagtutuberong-mga-Utos">Pagtutuberong mga Utos</a>
+            </li>
+      </ol>
+    </li>
+  </ol>
+</div>
+
+        </div>
+      </div>
+      <footer>
+  <div class="site-source">
+    <a href="/site">About this site</a><br>
+    Patches, suggestions, and comments are welcome.
+  </div>
+  <div class="sfc-member">
+    Git is a member of <a href="/sfc">Software Freedom Conservancy</a>
+  </div>
+</footer>
+
+<script src="/assets/application-84db8b4799905f9f7cc62292e1a97e206056e492088736595af9c2fe3ee50c4b.js"></script>
+
+    </div>
+
+</body>
+</html>
