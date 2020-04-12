@@ -1,0 +1,1468 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+
+<head>
+
+  <!-- Global Site Tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-35008513-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+  gtag('config', 'UA-35008513-1');
+  </script>
+  <title>Goal 8 .:. Sustainable Development Knowledge Platform</title>
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="keywords" content="Ocean Conference 2017" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+  <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+  <link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic" media=all />
+  <link rel=stylesheet href="//fonts.googleapis.com/css?family=Roboto+Condensed:400,700" media=all />
+  <link rel=stylesheet href="//fonts.googleapis.com/css?family=Droid+Sans" media=all />
+  <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+
+
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Noto Serif|Noto Sans" rel="stylesheet" type="text/css">
+
+
+  <script type="text/javascript" src="https://sustainabledevelopment.un.org/jquery.js"></script>
+
+  <script type="text/javascript" src="/include/workspace.js"></script>
+
+  <script type="text/javascript" src="/content/documents/partnerships.js"></script>
+
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Puritan" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+
+
+
+
+
+  <script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+
+
+  <link rel="stylesheet" type="text/css" href="/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+
+  <!-- styles to merge with homepage -->
+  <style>
+    .menu {
+      font-size: 14.98px !important;
+    }
+
+    .half {
+      width: 50%;
+      float: left;
+    }
+
+    .innerHalfLeft {
+      padding-left: 10px;
+    }
+
+    .sdgRoundSmall {
+      height: 25px;
+      width: 25px;
+      float: left;
+      margin-right: 1px;
+      margin-bottom: 0px;
+    }
+
+    .hidden {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+  </style>
+
+
+
+  <script>
+
+
+
+
+
+
+
+    $(document).scroll(function(){
+    if($(this).scrollTop() > 80)
+    {
+
+    $(".unLogo").attr("class", "unLogo_small");
+
+       $(".oceanLogo").attr("class", "oceanLogo_small");
+
+       $(".unTitle").attr("class", "unTitle_small");
+       $(".unSubTitle").attr("class", "unSubTitle_small");
+
+      $(".unSubTitle").attr("class", "unSubTitle_small");
+
+
+
+    $(".menuBottomArea").attr("class", "menuBottomArea_small");
+
+    $("#menuBarArea").attr("class", "menuBarArea_small");
+
+
+  $("#topBarArea").attr("class", "topBarArea_small");
+
+
+     $("#menuBarArea_sub").attr("class", "menuBarArea_sub_small");
+
+    $( "#icons").attr("class", "icons_small");
+
+
+
+    }
+});
+
+
+$(document).scroll(function(){
+    if($(this).scrollTop() < 80)
+    {
+
+
+    $( ".unLogo_small").attr("class", "unLogo");
+
+
+         $(".oceanLogo_small").attr("class", "oceanLogo");
+
+       $(".unTitle_small").attr("class", "unTitle");
+
+     $(".unSubTitle_small").attr("class", "unSubTitle");
+     $(".menuBottomArea_small").attr("class", "menuBottomArea");
+
+
+    $( "#icons").attr("class", "icons");
+
+
+
+    $("#topBarArea").attr("class", "topBarArea");
+
+    $("#menuBarArea").attr("class", "menuBarArea");
+
+     $("#menuBarArea_sub").attr("class", "menuBarArea_sub");
+
+
+
+    }
+});
+
+
+
+    $(document).ready(function() {
+
+
+
+
+        $('ul.tabsNew').each(function() {
+            // For each set of tabs, we want to keep track of
+            // which tab is active and it's associated content
+            var $active, $content, $links = $(this).find('a');
+
+            // If the location.hash matches one of the links, use that as the active tab.
+            // If no match is found, use the first link as the initial active tab.
+            $active = $($links.filter('[href="' + location.hash + '"]')[0] || $links[0]);
+            $active.addClass('active');
+            $content = $($active.attr('href'));
+
+            // Hide the remaining content
+            $links.not($active).each(function() {
+                $($(this).attr('href')).hide();
+            });
+
+            // Bind the click event handler
+            $(this).on('click', 'a', function(e) {
+                // Make the old tab inactive.
+                $active.removeClass('active');
+                $content.hide();
+
+                // Update the variables with the new link and content
+                $active = $(this);
+                $content = $($(this).attr('href'));
+
+                // Make the tab active.
+                $active.addClass('active');
+                $content.show();
+
+                // Prevent the anchor's default click action
+                e.preventDefault();
+            });
+        });
+    });
+
+
+ $(document).ready(function() {
+    $(".jumper").on("click", function( e ) {
+
+        e.preventDefault();
+
+        $("body, html").animate({
+            scrollTop: $( $(this).attr('href') ).offset().top - 200
+        }, 500);
+
+    });
+});
+
+
+
+    $(document).ready(function() {
+
+
+
+
+        $('#miniNavLink_sub').click(function(event) {
+
+
+
+            $('#theTopMenu_sub').slideToggle();
+
+
+        });
+
+
+
+        $('#miniNavLink').click(function(event) {
+
+
+
+            $('#theTopMenu').slideToggle();
+
+
+        });
+
+    });
+    </script>
+
+  <link rel="stylesheet" href="https://sustainabledevelopment.un.org/content/partnershipcss/partnership.css" type="text/css">
+  <link rel="stylesheet" href="https://sustainabledevelopment.un.org/content/partnershipcss/partnership_1060.css" type="text/css">
+  <link rel="stylesheet" href="https://sustainabledevelopment.un.org/content/partnershipcss/partnership_920.css" type="text/css">
+  <link rel="stylesheet" href="https://sustainabledevelopment.un.org/content/partnershipcss/partnership_660.css" type="text/css">
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+  <div class="top" align="center">
+    <div align="middle">
+      <div align="left" class="topMiddle">
+
+
+        <span class="mobilehide">
+          <div style="padding-top:10px;float:left;">
+
+            <img src="https://sustainabledevelopment.un.org/content/images/image18_4895.jpg" class="house" alt="house icon"><a href="http://www.un.org/en/index.html" target="_blank">Welcome to the United Nations</a>
+          </div>
+          <div style="padding-top:10px;float:right;">
+            <a class="navbar-brand mr-0" href="//www.un.org/development/desa/en/" target="_blank">DESA</a>
+          </div>
+        </span>
+
+
+      </div>
+    </div>
+  </div>
+  <div align="center" id="topBarArea" class="topBarArea">
+    <div align="middle">
+      <div align="left" class="topArea">
+
+
+
+
+        <a href="/"><img id="oceanLogo" src="/content/images/sdgskp.png" class="oceanLogo" alt="SDGKP logo"></a>
+
+        <div id="useroption"></div>
+
+
+        <div id="notificationbox" class="notificationbox"></div>
+
+
+
+
+        <a href="/"><img id="unLogo" src="/content/images/sdgskp.png" class="unLogo" alt="UN logo"></a>
+
+
+
+
+
+
+      </div>
+
+
+
+      <div id="menuBarArea" class="menuBarArea" align="middle">
+
+
+
+
+
+
+
+
+        <div class="menuArea">
+
+
+
+
+
+
+
+
+
+
+          <a href="#" id="miniNavLink">
+            <div class="menuOption"><img style="border:0px;height:15px;" src="/content/partnershipcss/mininav.png" alt="navigation"></div>
+          </a>
+
+
+
+          <div id="theTopMenu">
+
+
+            <a href="/">
+              <div class="menu" style="padding-left: 0;">Home</div>
+            </a>
+            <a href="/sdgs">
+              <div class="menu">SDGs</div>
+            </a>
+            <a href="/hlpf">
+              <div class="menu">HLPF</div>
+            </a>
+
+
+            <a href="/memberstates">
+              <div class="menu">States</div>
+            </a>
+            <a href="/topics/sids">
+              <div class="menu">SIDS</div>
+            </a>
+
+
+            <a href="/unsystem">
+              <div class="menu">UN System</div>
+            </a>
+
+            <a href="/mgos">
+              <div class="menu">Stakeholders</div>
+            </a>
+            <a href="/topics">
+              <div class="menu">Topics</div>
+            </a>
+
+
+
+            <a href="/sdinaction">
+              <div class="menu">Partnerships</div>
+            </a>
+
+
+
+            <a href="/resourcelibrary">
+              <div class="menu">Resources</div>
+            </a>
+
+
+
+
+            <a href="/about">
+              <div class="menu">About</div>
+            </a>
+
+
+
+          </div>
+        </div>
+        <div id="clear"></div>
+
+
+
+
+      </div>
+
+
+      <div class="menuBottomArea" align="middle"></div>
+
+
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <div align="center" class="mainArea">
+
+
+
+
+
+
+    <div align="middle">
+
+      <div align="left" class="innerArea">
+
+
+        <div id="accountbox" class="accountArea"></div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div align="center" class="mainArea">
+    <div align="middle">
+      <div align="left" class="innerArea">
+
+
+
+         
+ <div class="sdgBg" >
+  <div class="sdgLayer" style="background:#8f1838;"></div>
+<div align="center">
+        <div class="banner" style="width:auto;padding:40px;margin-top:0px;height:180px;">
+<img src="/content/images/image_logo_clean10008_20.jpg"  class="logo_clean3">
+       <div class="goal_title">Sustainable Development Goal 8</div>
+                <div class="goal_text">
+        Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all
+        </div>
+<div style="position:absolute;bottom:25px;right:25px;">
+<div style="float:left;margin-right:5px;">
+<a href="/sdg7"><img src="/content/images/arrow-left.png" style="height:30px;width:30px;border:0px;"></a>
+</div>
+<div style="float:left;margin-right:0px;">
+<a href="/sdg9"><img src="/content/images/arrow-right.png" style="height:30px;width:30px;border:0px;"></a>
+</div>
+</div>
+        </div>
+        </div>
+</div>
+ <div align="middle">
+   <div align="left" class="innerArea">
+<div id="clear"></div>
+<ul class="tabsNew">
+  <li><a href="#progress2019">Progress & Info (2019)</a></li>
+  <li><a href="#progress2018">Progress & Info (2018)</a></li>
+   <li><a href="#progress2017">Progress & Info (2017)</a></li>
+       <li><a href="#progress2016">Progress & Info (2016)</a></li>
+       <li><a href="#targets">Targets & Indicators</a></li>
+       <div id="clear"></div>
+   </ul>
+  <div id="targets" >
+<div class="wrap" style="margin-bottom:10px;">
+The global indicator framework was developed by the Inter-Agency and Expert Group on SDG Indicators (IAEG-SDGs) and agreed to, as a practical starting point at the 47th session of the UN Statistical Commission held in March 2016. The report of the Commission, which included the global indicator framework, was then taken note of by ECOSOC at its 70th session in June 2016. <a href="http://unstats.un.org/sdgs/indicators/indicators-list/" target="_blank">More information</a>.
+</div>
+<div id="clear"></div>
+<div style="float:left;width:550px;margin-right:10px;">
+<div class="mediumWhite">Targets</div>
+</div>
+<div style="float:left;width:440px;">
+<div class="mediumWhite">Indicators</div>
+</div>
+<div id="clear"></div>
+ <div class="wrap" style="margin-bottom:2px;">
+
+<div style="float:left;width:auto;margin-right:1.5em;">
+
+
+<div class="mediumWhite">8.1 </div>
+
+</div>
+
+<div style="float:left;width:46%;margin-right:10px;">
+
+
+ Sustain per capita economic growth in accordance with national circumstances and, in particular, at least 7 per cent gross domestic product growth per annum in the least developed countries <br>
+
+</div>
+
+
+<div style="float:left;width:440px;">
+
+
+ <div style="border-bottom:1px dotted #ccc;padding-top:3px;padding-bottom:3px;">
+<div style="float:left;width:50px;margin-right:10px;">
+
+
+<div class="mediumWhite">8.1.1</div>
+
+</div>
+
+<div style="float:left;width:380px;">
+
+
+ Annual growth rate of real GDP per capita
+
+</div>
+
+ 
+ 
+
+<div id="clear"></div>
+
+</div>
+ 
+
+
+ 
+ </div>
+ 
+<div id="clear"></div>
+
+</div>
+ <div class="wrap" style="margin-bottom:2px;">
+
+<div style="float:left;width:auto;margin-right:1.5em;">
+
+
+<div class="mediumWhite">8.2 </div>
+
+</div>
+
+<div style="float:left;width:46%;margin-right:10px;">
+
+
+ Achieve higher levels of economic productivity through diversification, technological upgrading and innovation, including through a focus on high-value added and labour-intensive sectors 
+
+</div>
+
+
+<div style="float:left;width:440px;">
+
+
+ <div style="border-bottom:1px dotted #ccc;padding-top:3px;padding-bottom:3px;">
+<div style="float:left;width:50px;margin-right:10px;">
+
+
+<div class="mediumWhite">8.2.1</div>
+
+</div>
+
+<div style="float:left;width:380px;">
+
+
+ Annual growth rate of real GDP per employed person
+
+</div>
+
+ 
+ 
+
+<div id="clear"></div>
+
+</div>
+ 
+
+
+ 
+ </div>
+ 
+<div id="clear"></div>
+
+</div>
+ <div class="wrap" style="margin-bottom:2px;">
+
+<div style="float:left;width:auto;margin-right:1.5em;">
+
+
+<div class="mediumWhite">8.3 </div>
+
+</div>
+
+<div style="float:left;width:46%;margin-right:10px;">
+
+
+ Promote development-oriented policies that support productive activities, decent job creation, entrepreneurship, creativity and innovation, and encourage the formalization and growth of micro-, small- and medium-sized enterprises, including through access to financial services 
+
+</div>
+
+
+<div style="float:left;width:440px;">
+
+
+ <div style="border-bottom:1px dotted #ccc;padding-top:3px;padding-bottom:3px;">
+<div style="float:left;width:50px;margin-right:10px;">
+
+
+<div class="mediumWhite">8.3.1</div>
+
+</div>
+
+<div style="float:left;width:380px;">
+
+
+ Proportion of informal employment in non‑agriculture employment, by sex
+
+</div>
+
+ 
+ 
+
+<div id="clear"></div>
+
+</div>
+ 
+
+
+ 
+ </div>
+ 
+<div id="clear"></div>
+
+</div>
+ <div class="wrap" style="margin-bottom:2px;">
+
+<div style="float:left;width:auto;margin-right:1.5em;">
+
+
+<div class="mediumWhite">8.4 </div>
+
+</div>
+
+<div style="float:left;width:46%;margin-right:10px;">
+
+
+ Improve progressively, through 2030, global resource efficiency in consumption and production and endeavour to decouple economic growth from environmental degradation, in accordance with the 10-year framework of programmes on sustainable consumption and production, with developed countries taking the lead <br>
+
+</div>
+
+
+<div style="float:left;width:440px;">
+
+
+ <div style="border-bottom:1px dotted #ccc;padding-top:3px;padding-bottom:3px;">
+<div style="float:left;width:50px;margin-right:10px;">
+
+
+<div class="mediumWhite">8.4.1</div>
+
+</div>
+
+<div style="float:left;width:380px;">
+
+
+ Material footprint, material footprint per capita, and material footprint per GDP
+
+</div>
+
+ 
+ 
+
+<div id="clear"></div>
+
+</div> <div style="border-bottom:1px dotted #ccc;padding-top:3px;padding-bottom:3px;">
+<div style="float:left;width:50px;margin-right:10px;">
+
+
+<div class="mediumWhite">8.4.2</div>
+
+</div>
+
+<div style="float:left;width:380px;">
+
+
+ Domestic material consumption, domestic material consumption per capita, and domestic material consumption per GDP
+
+</div>
+
+ 
+ 
+
+<div id="clear"></div>
+
+</div>
+ 
+
+
+ 
+ </div>
+ 
+<div id="clear"></div>
+
+</div>
+ <div class="wrap" style="margin-bottom:2px;">
+
+<div style="float:left;width:auto;margin-right:1.5em;">
+
+
+<div class="mediumWhite">8.5 </div>
+
+</div>
+
+<div style="float:left;width:46%;margin-right:10px;">
+
+
+ By 2030, achieve full and productive employment and decent work for all women and men, including for young people and persons with disabilities, and equal pay for work of equal value <br>
+
+</div>
+
+
+<div style="float:left;width:440px;">
+
+
+ <div style="border-bottom:1px dotted #ccc;padding-top:3px;padding-bottom:3px;">
+<div style="float:left;width:50px;margin-right:10px;">
+
+
+<div class="mediumWhite">8.5.1</div>
+
+</div>
+
+<div style="float:left;width:380px;">
+
+
+ Average hourly earnings of female and male employees, by occupation, age and persons with disabilities
+
+</div>
+
+ 
+ 
+
+<div id="clear"></div>
+
+</div> <div style="border-bottom:1px dotted #ccc;padding-top:3px;padding-bottom:3px;">
+<div style="float:left;width:50px;margin-right:10px;">
+
+
+<div class="mediumWhite">8.5.2</div>
+
+</div>
+
+<div style="float:left;width:380px;">
+
+
+ Unemployment rate, by sex, age and persons with disabilities
+
+</div>
+
+ 
+ 
+
+<div id="clear"></div>
+
+</div>
+ 
+
+
+ 
+ </div>
+ 
+<div id="clear"></div>
+
+</div>
+ <div class="wrap" style="margin-bottom:2px;">
+
+<div style="float:left;width:auto;margin-right:1.5em;">
+
+
+<div class="mediumWhite">8.6 </div>
+
+</div>
+
+<div style="float:left;width:46%;margin-right:10px;">
+
+
+ By 2020, substantially reduce the proportion of youth not in employment, education or training <br>
+
+</div>
+
+
+<div style="float:left;width:440px;">
+
+
+ <div style="border-bottom:1px dotted #ccc;padding-top:3px;padding-bottom:3px;">
+<div style="float:left;width:50px;margin-right:10px;">
+
+
+<div class="mediumWhite">8.6.1</div>
+
+</div>
+
+<div style="float:left;width:380px;">
+
+
+ Proportion of youth (aged 15-24 years) not in education, employment or training
+
+</div>
+
+ 
+ 
+
+<div id="clear"></div>
+
+</div>
+ 
+
+
+ 
+ </div>
+ 
+<div id="clear"></div>
+
+</div>
+ <div class="wrap" style="margin-bottom:2px;">
+
+<div style="float:left;width:auto;margin-right:1.5em;">
+
+
+<div class="mediumWhite">8.7 </div>
+
+</div>
+
+<div style="float:left;width:46%;margin-right:10px;">
+
+
+ Take immediate and effective measures to eradicate forced labour, end modern slavery and human trafficking and secure the prohibition and elimination of the worst forms of child labour, including recruitment and use of child soldiers, and by 2025 end child labour in all its forms 
+
+</div>
+
+
+<div style="float:left;width:440px;">
+
+
+ <div style="border-bottom:1px dotted #ccc;padding-top:3px;padding-bottom:3px;">
+<div style="float:left;width:50px;margin-right:10px;">
+
+
+<div class="mediumWhite">8.7.1</div>
+
+</div>
+
+<div style="float:left;width:380px;">
+
+
+ Proportion and number of children aged 5‑17 years engaged in child labour, by sex and age
+
+</div>
+
+ 
+ 
+
+<div id="clear"></div>
+
+</div>
+ 
+
+
+ 
+ </div>
+ 
+<div id="clear"></div>
+
+</div>
+ <div class="wrap" style="margin-bottom:2px;">
+
+<div style="float:left;width:auto;margin-right:1.5em;">
+
+
+<div class="mediumWhite">8.8 </div>
+
+</div>
+
+<div style="float:left;width:46%;margin-right:10px;">
+
+
+ Protect labour rights and promote safe and secure working environments for all workers, including migrant workers, in particular women migrants, and those in precarious employment <br>
+
+</div>
+
+
+<div style="float:left;width:440px;">
+
+
+ <div style="border-bottom:1px dotted #ccc;padding-top:3px;padding-bottom:3px;">
+<div style="float:left;width:50px;margin-right:10px;">
+
+
+<div class="mediumWhite">8.8.1</div>
+
+</div>
+
+<div style="float:left;width:380px;">
+
+
+ Frequency rates of fatal and non-fatal occupational injuries, by sex and migrant status
+
+</div>
+
+ 
+ 
+
+<div id="clear"></div>
+
+</div> <div style="border-bottom:1px dotted #ccc;padding-top:3px;padding-bottom:3px;">
+<div style="float:left;width:50px;margin-right:10px;">
+
+
+<div class="mediumWhite">8.8.2</div>
+
+</div>
+
+<div style="float:left;width:380px;">
+
+
+ Increase in national compliance of labour rights (freedom of association and collective bargaining) based on International Labour Organization (ILO) textual sources and national legislation, by sex and migrant status
+
+</div>
+
+ 
+ 
+
+<div id="clear"></div>
+
+</div>
+ 
+
+
+ 
+ </div>
+ 
+<div id="clear"></div>
+
+</div>
+ <div class="wrap" style="margin-bottom:2px;">
+
+<div style="float:left;width:auto;margin-right:1.5em;">
+
+
+<div class="mediumWhite">8.9 </div>
+
+</div>
+
+<div style="float:left;width:46%;margin-right:10px;">
+
+
+ By 2030, devise and implement policies to promote sustainable tourism that creates jobs and promotes local culture and products <br>
+
+</div>
+
+
+<div style="float:left;width:440px;">
+
+
+ <div style="border-bottom:1px dotted #ccc;padding-top:3px;padding-bottom:3px;">
+<div style="float:left;width:50px;margin-right:10px;">
+
+
+<div class="mediumWhite">8.9.1</div>
+
+</div>
+
+<div style="float:left;width:380px;">
+
+
+ Tourism direct GDP as a proportion of total GDP and in growth rate
+
+</div>
+
+ 
+ 
+
+<div id="clear"></div>
+
+</div> <div style="border-bottom:1px dotted #ccc;padding-top:3px;padding-bottom:3px;">
+<div style="float:left;width:50px;margin-right:10px;">
+
+
+<div class="mediumWhite">8.9.2</div>
+
+</div>
+
+<div style="float:left;width:380px;">
+
+
+ Number of jobs in tourism industries as a proportion of total jobs and growth rate of jobs, by sex
+
+</div>
+
+ 
+ 
+
+<div id="clear"></div>
+
+</div>
+ 
+
+
+ 
+ </div>
+ 
+<div id="clear"></div>
+
+</div>
+ <div class="wrap" style="margin-bottom:2px;">
+
+<div style="float:left;width:auto;margin-right:1.5em;">
+
+
+<div class="mediumWhite">8.10 </div>
+
+</div>
+
+<div style="float:left;width:46%;margin-right:10px;">
+
+
+ Strengthen the capacity of domestic financial institutions to encourage and expand access to banking, insurance and financial services for all <br>
+
+</div>
+
+
+<div style="float:left;width:440px;">
+
+
+ <div style="border-bottom:1px dotted #ccc;padding-top:3px;padding-bottom:3px;">
+<div style="float:left;width:50px;margin-right:10px;">
+
+
+<div class="mediumWhite">8.10.1</div>
+
+</div>
+
+<div style="float:left;width:380px;">
+
+
+ Number of commercial bank branches and automated teller machines (ATMs) per 100,000 adults
+
+</div>
+
+ 
+ 
+
+<div id="clear"></div>
+
+</div> <div style="border-bottom:1px dotted #ccc;padding-top:3px;padding-bottom:3px;">
+<div style="float:left;width:50px;margin-right:10px;">
+
+
+<div class="mediumWhite">8.10.2</div>
+
+</div>
+
+<div style="float:left;width:380px;">
+
+
+ Proportion of adults (15 years and older) with an account at a bank or other financial institution or with a mobile-money-service provider
+
+</div>
+
+ 
+ 
+
+<div id="clear"></div>
+
+</div>
+ 
+
+
+ 
+ </div>
+ 
+<div id="clear"></div>
+
+</div>
+ <div class="wrap" style="margin-bottom:2px;">
+
+<div style="float:left;width:auto;margin-right:1.5em;">
+
+
+<div class="mediumWhite">8.a</div>
+
+</div>
+
+<div style="float:left;width:46%;margin-right:10px;">
+
+
+ Increase Aid for Trade support for developing countries, in particular least developed countries, including through the Enhanced Integrated Framework for Trade-Related Technical Assistance to Least Developed Countries <br>
+
+</div>
+
+
+<div style="float:left;width:440px;">
+
+
+ <div style="border-bottom:1px dotted #ccc;padding-top:3px;padding-bottom:3px;">
+<div style="float:left;width:50px;margin-right:10px;">
+
+
+<div class="mediumWhite">8.a.1</div>
+
+</div>
+
+<div style="float:left;width:380px;">
+
+
+ Aid for Trade commitments and disbursements
+
+</div>
+
+ 
+ 
+
+<div id="clear"></div>
+
+</div>
+ 
+
+
+ 
+ </div>
+ 
+<div id="clear"></div>
+
+</div>
+ <div class="wrap" style="margin-bottom:2px;">
+
+<div style="float:left;width:auto;margin-right:1.5em;">
+
+
+<div class="mediumWhite">8.b </div>
+
+</div>
+
+<div style="float:left;width:46%;margin-right:10px;">
+
+
+ By 2020, develop and operationalize a global strategy for youth employment and implement the Global Jobs Pact of the International Labour Organization 
+
+</div>
+
+
+<div style="float:left;width:440px;">
+
+
+ <div style="border-bottom:1px dotted #ccc;padding-top:3px;padding-bottom:3px;">
+<div style="float:left;width:50px;margin-right:10px;">
+
+
+<div class="mediumWhite">8.b.1</div>
+
+</div>
+
+<div style="float:left;width:380px;">
+
+
+ Total government spending in social protection and employment programmes as a proportion of the national budgets and GDP
+
+</div>
+
+ 
+ 
+
+<div id="clear"></div>
+
+</div>
+ 
+
+
+ 
+ </div>
+ 
+<div id="clear"></div>
+
+</div>
+
+<div id="clear"></div>
+</div>
+<div class="homeRight"  >
+ <div class="columnHeader" >REVIEW</div>
+
+  <div class="wrap">
+    <img src="/content/images/image13_1981.jpg" style="border:0px;width:100%;margin-bottom:10px;">
+    <div class="mediumWhite"><span style="color:#8f1838;">Goal 8</span>
+              <span style="color:#999;">
+          was reviewed in-depth at the High-level Political Forum of
+        </span>
+        <a href="/hlpf/2019" style="text-decoration: none;"><span style="color:#00adef;">2019</span></a>
+          </div>
+  </div>
+
+ <div class="columnHeader" >Read more in related topics</div>
+   <div id="clear"></div>
+<div style="margin-bottom:5px;padding:0px;">
+
+<a href="https://sustainabledevelopment.un.org/topics/employment" title="Employment, decent work for all and social protection "><img src="/content/images/imagelarge502_54.jpg" style="width:100%;border:0px;"></a>
+
+<div style="background:#fff;padding:5px;color:#fff;font-size:13px;">
+
+<a  href="https://sustainabledevelopment.un.org/topics/employment" style="font-size:18px;font-family:oswald;">Employment, decent work for all and social protection </a>
+
+</div>
+
+</div>
+
+
+ 
+
+<div style="margin-bottom:5px;padding:0px;">
+
+<a href="https://sustainabledevelopment.un.org/topics/greeneconomy" title="Green economy"><img src="/content/images/imagelarge502_59.jpg" style="width:100%;border:0px;"></a>
+
+<div style="background:#fff;padding:5px;color:#fff;font-size:13px;">
+
+<a  href="https://sustainabledevelopment.un.org/topics/greeneconomy" style="font-size:18px;font-family:oswald;">Green economy</a>
+
+</div>
+
+</div>
+
+
+ 
+
+<div style="margin-bottom:5px;padding:0px;">
+
+<a href="https://sustainabledevelopment.un.org/topics/sustainabletourism" title="Sustainable tourism"><img src="/content/images/imagelarge502_52.jpg" style="width:100%;border:0px;"></a>
+
+<div style="background:#fff;padding:5px;color:#fff;font-size:13px;">
+
+<a  href="https://sustainabledevelopment.un.org/topics/sustainabletourism" style="font-size:18px;font-family:oswald;">Sustainable tourism</a>
+
+</div>
+
+</div>
+
+
+ 
+
+
+
+<div id="clear"></div>
+</div>
+<div class="homeLeft">
+<div id="progress2017">
+    <div class="wrap" style="margin-bottom:10px;">
+        <div class="mediumWhite">Progress of goal 8 in 2017</div>
+        <!-- copy here the existing text of the goal 2017 -->
+        <p>Increasing labour productivity, reducing the unemployment rate, especially for young people, and improving access to financial services and benefits are essential components of sustained and inclusive economic growth.
+        </p>
+        <ul class="highlights">
+            <li>The average annual growth rate of real GDP per capita worldwide was 1.6 per cent from 2010 to 2015, compared to 0.9 per cent in 2005-2009. In the least developed countries, the per capita growth rate accelerated from 3.5 per cent in 2000-2004 to 4.6 per cent in 2005-2009, before slowing to 2.5 per cent in 2010-2015. Overall average annual GDP growth in the least developed countries followed a similar trend, decelerating from 7.1 per cent in 2005 -2009 to 4.9 per cent in 2010-2015, below the Sustainable Development Goals target of 7 per cent.
+            </li>
+            <li>Labour productivity (annual growth rate of real GDP per worker) globally has slowed from an average annual rate of 2.9 per cent from 2000 to 2008 to 1.9 per cent from 2009 to 2016. The slowdown represents a negative development for the global economy, with adverse effects on living standards and real wages.
+            </li>
+            <li>The global unemployment rate stood at 5.7 per cent in 2016, with women more likely to be unemployed than men across all age groups. Youth were almost three times as likely as adults to be unemployed, with unemployment rates of 12.8 per cent and 4.4 per cent, respectively, in 2016. Moreover, in more than 76 per cent of countries with data, more than 1 in 10 youth are neither in the educational system nor working. Young women are more likely than young men to fall into that category in almost 70 per cent of countries with data.
+            </li>
+            <li>While the number of children from 5 to 17 years of age who are working has declined from 246 million in 2000 to 168 million in 2012, child labour remains a serious concern. More than half of child labourers (85 million children) participate in hazardous work and 59 per cent of them work in the agricultural sector. Girls have made greater progress than boys, with the number of girls engaged in child labour declining by 40 per cent during the period 2000-2012, compared to a decline of 25 per cent for boys.
+            </li>
+            <li>Access to financial services enables individuals and firms to manage changes in income, deal with fluctuating cash flows, accumulate assets and make productive investments. Access to financial services through automated teller machines increased by 55 per cent worldwide from 2010 to 2015. Commercial bank branches grew by 5 per cent during the same period, with the lower growth explained by increased digital access to financial services. Globally, there were 60 automated teller machines and 17 commercial bank branches per 100,000 adults in 2015. From 2011 to 2014, 700 million adults became new account holders and the share of adults with an account at a financial institution increased from 51 per cent to 61 per cent.
+            </li>
+            <li>After contracting slightly in 2014, aid for trade rose 5.4 per cent in real terms to reach $53.9 billion in 2015 owing to a recovery in commitments for trade-related infrastructure and further growth in support of banking and agriculture. Aid for trade commitments to the least developed countries increased in 2015 by $4.3 billion, reaching $17.2 billion. The Enhanced Integrated Framework, an aid-for-trade programme dedicated to those countries, started its second phase in 2016 and will run to 2022. Donor commitments to the Framework stood at $55.3 million in 2016, with $17.3 million already disbursed to the Trust Fund.
+            </li>
+        </ul>
+        <p>Source: Report of the Secretary-General, "Progress towards the Sustainable Development Goals", <a href="http://www.un.org/ga/search/view_doc.asp?symbol=E/2017/66&Lang=E" target="_blank">E/2017/66</a></p>
+        <!-- end: copy here the existing text of the goal -->
+        <div id="clear"></div>
+    </div>
+</div>
+<div id="progress2018">
+    <div class="wrap" style="margin-bottom:10px;">
+        <div class="mediumWhite">Progress of goal 8 in 2018</div>
+        <!-- copy here the existing text of the goal 2018 -->
+        <p>Globally, labour productivity has increased and the unemployment rate has decreased.
+            However, more progress is needed to increase employment opportunities, especially for
+            young people, reduce informal employment and labour market inequality (particularly
+            in terms of the gender pay gap), promote safe and secure working environments, and
+            improve access to financial services to ensure sustained and inclusive economic growth.
+        </p>
+        <ul class="highlights">
+            <li>In 2016, real gross domestic product (GDP) per capita grew at 1.3 per cent globally, less
+                than the 1.7 per cent average growth rate recorded in 2010–2016. For LDCs, the rate fell
+                sharply from 5.7 per cent in 2005–2009 to 2.3 per cent in 2010–2016.
+            </li>
+            <li>Labour productivity at the global level, measured as output produced per employed
+                person in constant 2005 US dollars, grew by 2.1 per cent in 2017. This is the fastest
+                growth registered since 2010.
+            </li>
+            <li>Globally, 61 per cent of all workers were engaged in informal employment in 2016.
+                Excluding the agricultural sector, 51 per cent of all workers fell into this employment
+                category.
+            </li>
+            <li>Data from 45 countries suggest that gender inequality in earnings is still pervasive: in
+                89 per cent of these countries, the hourly wages of men are, on average, higher than
+                those of women, with a median pay gap of 12.5 per cent.
+            </li>
+            <li>The global unemployment rate in 2017 was 5.6 per cent, down from 6.4 per cent in
+                2000. The decline has slowed since 2009, when it hit 5.9 per cent. Youth are three
+                times more likely to be unemployed than adults, with the global youth unemployment
+                rate at 13 per cent in 2017.
+            </li>
+            <li>In high-income countries, almost every adult has an account at a bank or other financial
+                institution, compared to only 35 per cent of adults in low-income countries. Across all
+                regions, women lag behind men in this regard.
+            </li>
+        </ul>
+        <p>Source: Report of the Secretary-General, <a href="https://unstats.un.org/sdgs/report/2018" target="_blank">The Sustainable Development Goals Report
+                2018</a></p>
+        <div id="clear"></div>
+    </div>
+</div>
+<div id="progress2019">
+    <div class="wrap" style="margin-bottom:10px;">
+        <div class="mediumWhite">Progress of goal 8 in 2019</div>
+        <!-- copy here the existing text of the goal 2018 -->
+        <p>Inclusive and sustainable economic growth can drive progress and generate the
+            means to implement the Sustainable Development Goals. Globally, labour
+            productivity has increased and unemployment is back to pre-financial crisis levels.
+            However, the global economy is growing at a slower rate. More progress is needed to
+            increase employment opportunities, particularly for young people, reduce informal
+            employment and the gender pay gap and promote safe and secure working
+            environments to create decent work for all.
+        </p>
+        <ul class="highlights">
+            <li>In 2017, the global growth rate of real GDP per capita was 1.9 per cent and is
+                expected to remain at about 2 per cent from 2018 to 2020. This is significantly
+                less than the 3 per cent rate attained in 2010 and slightly higher than the 2015
+                rate of 1.63 per cent. Real GDP growth rate for least developed countries is
+                expected to increase from 4.5 per cent in 2017 to 5.7 per cent in 2020, which is
+                less than the 7 per cent envisioned by the 2030 Agenda.
+            </li>
+            <li>Since the global economic downturn of 2009, labour productivity (measured as
+                GDP per employed person) has been increasing in the world, recording positive
+                annual growth rates consistently since 2010. In 2018, the world’s labour
+                productivity increased by 2.1 per cent, its highest annual growth since 2010.
+            </li>
+            <li>Informal employment, which has an impact on the adequacy of earnings,
+                occupational safety and health and working conditions, remains pervasive: in
+                three quarters of countries with data on the subject, more than half of all persons
+                employed in non-agriculture sectors are in informal employment.
+            </li>
+            <li>Based on data for 62 countries, the median hourly gender pay gap stood at 12 per
+                cent. The median gender pay gap exceeded 20 per cent in managerial and
+                professional occupations, among workers in crafts and related trades and among
+                plant machine operators and assemblers.
+            </li>
+            <li>The global unemployment rate has finally recovered from the global economic
+                crisis. In 2018, the global unemployment rate stood at 5.0 per cent – matching
+                pre-crisis levels. Youth were three times more likely to be unemployed than
+                adults.
+            </li>
+            <li>In 2018, one fifth of the world’s youth were not in education, employment or
+                training, meaning that they were neither gaining professional experience nor
+                acquiring or developing skills through educational or vocational programmes in
+                their prime years. There is a stark gender difference. Young women were more
+                than twice as likely as young men to be unemployed or outside the labour force
+                and not in education or training.
+            </li>
+            <li>Many workers around the world are exposed to undue risks in their workplaces.
+                Based on recent data from some 55 countries, a median of 3 deaths occurred per
+                100,000 employees and a median of 889 non-fatal injuries occurred per 100,000
+                employees.
+            </li>
+            <li>Access to finance is on the rise globally, but the mode of access seems to be
+                changing with growing reliance on technology. From 2010 to 2017, the number
+                of automated teller machines (ATMs) per 100,000 adults grew by close to 50 per
+                cent from 45 to 66 globally, and from 2.3 to 5.8 in the least developed countries.
+                The number of commercial bank branches per 100,000 adults grew by only 2 per
+                cent between 2010 and 2017, with more customers using digital banking
+                solutions.
+            </li>
+            <li>In 2017, aid-for-trade commitments increased to $58 billion and more than
+                doubled when compared to the 2002–2005 baseline, when they represented
+                $23.1 billion. In absolute terms, the increase was highest in the agriculture
+                sector ($1.7 billion), the industry sector ($1.0 billion) and in banking and
+                financial services ($1.0 billion).</li>
+        </ul>
+        <p>Source: Report of the Secretary-General, <a href="https://undocs.org/E/2019/68" target="_blank">Special edition: progress towards the Sustainable
+                Development Goals</a></p>
+        <div id="clear"></div>
+    </div>
+</div>
+<div id="progress2016">
+ <div class="wrap" style="margin-bottom:10px;">
+     <div class="mediumWhite">Progress of goal 8 in 2016</div>
+     <ul class="highlights">
+
+
+<li>Sustained and inclusive economic growth is necessary for achieving sustainable development. The global annual growth rate of real GDP per capita increased by 1.3 per cent in 2014, a significant slowdown compared to 2010 (2.8 per cent growth) and 2000 (3.0 per cent growth). Developing regions grew far faster than developed regions, with average annual growth rates in 2014 of 3.1 per cent and 1.4 per cent, respectively. </li>
+<li>Labour productivity (measured by GDP per worker) spurs economic growth. Growth in labour productivity in developing regions far outpaced that of developed regions, especially in Asia. Between 2010 and 2015, labour productivity grew by 0.9 per cent per year, on average, in developed regions, while rising by 6.7 per cent per year, on average, in Eastern Asia, the region with the fastest growth. Despite rapid growth in some developing regions, labour productivity remains far higher in the developed regions. In 2015, the average worker in developed regions produced 23 times the annual output of an average worker in sub-Saharan Africa (which has the lowest labour productivity in developing regions), and 2.5 times that of an average worker in Western Asia (which has the highest labour productivity in developing regions). </li>
+<li>The global unemployment rate stood at 6.1 per cent in 2015, down from a peak of 6.6 per cent in 2009, mostly owing to a decline in unemployment in the developed regions. Unemployment affects population groups differently. Globally, women and youth (aged 15 to 24) are more likely to face unemployment than men and adults aged 25 and over. In all regions, except Eastern Asia and the developed regions, the unemployment rate among women is higher than that of men. In almost all regions, the rate of youth unemployment is more than twice that of adults.</li>
+<li>Although the number of children engaged in child labour declined globally by one third from 2000 to 2012 (from 246 million to 168 million), more than half of child labourers in 2012 (85 million) were engaged in hazardous forms of work. The incidence of child labour was highest in sub-Saharan Africa, where 21 per cent of children were employed as child labourers. Of all child labourers worldwide, 59 per cent were engaged in agricultural activities in 2012. </li>
+<li>While economic growth and employment are important for economic security, access to financial services is an essential component of inclusive growth. Between 2011 and 2014, the proportion of the world’s adult population with an account at a financial institution or a mobile money service provider increased from 51 per cent to 62 per cent, meaning that 700 million adults became account holders during this period. Financial exclusion disproportionately affected women and the poor. The proportion of women who are account holders is 9 percentage points lower than the proportion of men who are account holders. Moreover, the proportion of account holders among the poorest 40 per cent of households is 14 percentage points lower than among those living in the richest 60 per cent of households.</li>
+<li>In 2014, aid for trade assistance was $54.8 billion, an increase of almost 120 per cent over the period from 2002 to 2005. However, total commitments fell slightly (by $1 billion) in 2014 compared to 2013, driven mainly by a $4.7 billion drop in support for transport and storage. A total of 146 developing countries received aid for trade assistance in 2014, with lower-middle-income countries receiving 39.4 per cent of the total, the least developed countries receiving 26.3 per cent and upper-middle-income countries receiving 19 per cent. On a per capita basis, however, the least developed countries received $10 per capita, more than any other income group and more than twice the global average.
+</li>
+
+
+
+
+</ul>
+
+
+<p></p>
+Source: Report of the Secretary-General, "Progress towards the Sustainable Development Goals", <a href="http://www.un.org/ga/search/view_doc.asp?symbol=E/2016/75&Lang=E" target="_blank">E/2016/75</a>
+      <div id="clear"></div>
+   </div>
+</div>
+   </div>
+</div></div>
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
+
+  <div align="center" style="background:#4d4d4d;">
+    <div align="middle">
+      <div align="left" class="bottom">
+        <div class="floatLeft_Half">
+          <div class="topHeadlineGrey">United Nations</div>
+          <ul class="highlights">
+            <li><a href="http://sustainabledevelopment.un.org/contact">Contact us</a></li>
+            <li><a href="http://www.un.org/en/aboutun/copyright/index.html" target="_blank">Copyright</a></li>
+          </ul>
+        </div>
+        <div class="floatLeft_Half">
+        </div>
+        <div id="clear"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script>
+function showHideProgramme(str) {
+            $('#' + str).slideToggle();
+            return false;
+        }
+</script>
+
+</html><!-- /sdg8 | fbafa53395572e4ee17ab106772700e6.html  --><!-- Cached -->
