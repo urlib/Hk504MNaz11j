@@ -1,0 +1,1622 @@
+/**
+ * Combined by jsDelivr.
+ * Do NOT use SRI with dynamically generated files! More information: https://www.jsdelivr.com/using-sri-with-dynamic-files
+ */
+;
+
+   ~   ~
++['0 . 0']+
+     ~
+
+/web@ionify activating.../
+
++
+{ re:
+    { id:  "web.0.1@ionify"
+    , is:  "implicit object notation invented for your web"
+    , by: ["mike.lee@ionify", "team@ionify"]
+    , at:  "2017.04.29-07...2007.09-04"
+        ,
+      stories:
+        [ /note: .../
+        , /todo: Add tests for web@ionify + its actions/
+        , /todo: .../
+        ]
+    },
+
+
+  debug
+    : false
+    ,
+
+  on:
+    [ ["get", "then"]
+    ,  "get"
+    ],
+
+
+  hosted
+    : true
+    ,
+
+  valueOf:
+    function ionifyWeb ()
+      {   var web = this
+      ;   delete web.valueOf
+
+      ;   web.watch  ()
+      ;   web.ready  ()
+      ;   web.locate ()
+      ;   web.get    ({get:"on@ionify", then:web})
+      },
+
+
+  watch:
+    function watch ()
+      { onerror =
+           function onUncaughtError (message, url, line, column, error)
+             { ~{warn : [message, error.stack]}
+               ~{debug: [message, "errorstack", url, line, column, error]}
+               return true
+             }
+      },
+
+
+  ready:
+    function ready ()
+      {   var error = this.errors
+      ;   if (typeof document == "undefined") throw new Error (error.noDOM)
+      ;   return true
+      },
+
+
+  errors:
+    { noDOM: "web@ionify needs the DOM: Document Object Module API"
+    },
+
+
+  locateStories:
+    [ "todo: Sense /ions/ path, don't hardcode it"
+    , /.../
+    ]
+    ,
+  locate:
+    function locate ()
+      { var script  =[  document.currentScript ,,]
+                    ||  document.scripts
+                    ||  document.head.getElementsByTagName ("script")
+          , path    =   script && script [script.length - 2].src
+          ; path    &&  (this.get$.PATH.ionify = path.replace (/(.+)\/.+$/, "$1/ions/"))
+      },
+
+
+  getStories:
+    [ 'note: +{get: "ion.id" || "./script.js"}'
+    , /todo: Keep updating get$.PATH with @domains + their paths/
+    , /todo: Handle URLs with existing file extension(s)/
+    , /todo: Move got() + .then code to +get.then/
+    , "todo: Sense ion ids vs. script paths: ./script.js"
+    , /todo: Use +method@ionify to define +get/
+    , /todo: .../
+    ]
+    ,
+  get$:
+    { HTTP: (/^\w+:\/\//)                       // matches URL protocols
+    ,   ID: (/(?:(.*)@(\D*)|(\D*))(\d+.*)*/)    // matches ((api)@(host.) | (api.)) version#
+    , NAME: (/(.*)\.$/)                         // matches (api).         | (host).
+    , PATH:
+          { ionify    : "https://rawgit.com/ionify/ionify/public/"
+          , undefined : "./"
+          , null      : "./"
+          , ""        : "./"
+          }
+    , TYPE: ".js"
+    ,  EXT: (/(\.\D*$)/)    // matches file extensions
+    ,  URL:
+        function getURL (match, name, space, file, version, offset, string)
+          {   var get$  = getURL.this
+          ,       ext   = get$.EXT.exec (match)
+          ;       name  = name  && ( name.match (get$.NAME) || [, name])[1]
+          ;       space = space && (space.match (get$.NAME) || [,space])[1]
+          ;       file  = file  && ( file.match (get$.NAME) || [, file])[1]
+
+          ;   return get$.PATH [space] + (name || file) + (version || "")
+                                       + /*(ext ? ext [1] :*/(get$.TYPE)
+          }
+    }
+    ,
+  get:
+    function get (ion)
+      { var get$          = (get.this || (get.this = this)).get$
+          , url           = ion.get
+          , act           = ion.then
+          ; get$.URL.this = get$
+          ; get$.PATH           || (get$.PATH = this.path.ionify)
+          ; Array.isArray (url) || (      url = [url])
+          ; Array.isArray (act) || (      act = [act])
+          ;
+
+        for (var last=url.length, next=-1; ++next < last;)
+          { function got ()
+              {  var then = got.then
+              ~  {debug: ["got ",got.path," doing ",then,"..."]}
+              ;  typeof then === "string" ? ~ion[then] : ~then
+              }
+
+            var script  = document.createElement ("script")
+              , then    = act [next] //|| (((then = {})[url [next]] = ion), then)
+              
+              , path    = url [next].match   (get$.HTTP)
+                        ? url [next]
+                        : url [next].replace (get$.ID, get$.URL)
+
+              ; then && (got.then = then) && (script.onload = got)
+              ; script.type   = "text/javascript"
+              ; script.async  = ion.now !== true
+              ; script.src    = got.path  = path
+              ; document.head.appendChild (script)
+              ~ {debug: ["get",path,"..."]}
+          }
+      },
+
+
+  "get then stories":
+    [ 'note: +{get: ["ion.id" || "./script.js"], then: ["actions"]}'
+    , /todo: Move +get's code here + update +get to use this/
+    , /todo: Do +on:ion.id; faster than .onload/
+    ]
+    ,
+  "get then":
+    function getThen (ion)
+      { return getThen.this.get (ion)
+      }
+}
+
++
+/web@ionify activated!/
+;
+;
+
+;
+~
+{ re:
+    { id:  'on.ion@ionify'
+    , by: ['mike.lee', 'team']
+    , at:  'ionify.net'
+    , on:  -4.200709
+    , to:  -7.20190502
+    , is:  -0.1
+    , it:
+        [" implements ionify: invoked object notation implemented for you.            "
+        ," senses ions as activated Objects; i.e. ~{} & ~objectReference.             "
+        ," senses ~on actions.                                                        "
+        ," activates ionify's host environment ion; e.g. web@ionify | node@ionify.    "
+        ," gets all of ionify's supporting ions using its host-provided ~get action.  "
+        ," starts its host application by ~get'ing its launch config [via ions.js].   "
+        ," ... "
+        ]
+    , we:
+        [" were examining if .onion() is the source of ions' lost 'this' reference.   "
+        ," were implementing ~on.do...                                                "
+        ," will make .resolve() to convert ids to ions: e.g. ionified references.     "
+        ," will .resolve this.* & ~* in strings & stories to actual ion references.   "
+        ," will .resolve action@test.ionify to test/action.js                         "
+        ," will add logging for unknown terms like ~get with a hostless ionify.       "
+        ," will make a way to undo all ~on:Type's.                                    "
+        ," like that ~{is:thing, type:'ion'} could test if a type is ionified.        "
+        ," like ~{on:'term',dont:act} or {no:{term:act} vs {on:'term',no:act} ? 👎🏾    "
+
+        ," were adding .link() call to onArray & think we should for all onSensors to "
+        +" ensure that they all have a .ion reference to their containing ion.        "
+        +" That'll support subsequent operations that depend on an ion's context.     "
+
+        ," like that it may be more sensible to create an ion Type sensor delegator   "
+        +" that ensures all ions have an id & that they & their ionified content have "
+        +" a reference to their host ion.                                             "
+
+        ," like that the delegator would do common actions for all ion types then     "
+        +" delegate to the relevant ion's Type sensor.                                "
+
+        ," like that it may then also make sense to have an ion Type cleanup that     "
+        +" removes those ion references for memory performance. May be good enough to "
+        +" only note this for now & revisit if performance needs to be improved.      "
+        ]
+    }
+
+, valueOf
+:   function hip ()
+      { this.ionify ()
+      }
+
+, ionify
+:   function ionify ()
+      { var  ionified  = Object.prototype.valueOf.ionified
+          ;    delete    Object.prototype.valueOf.ionified
+          ;  ionified && delete  ionified.valueOf
+
+        var  onion            = this
+          ;  onion.sense.on   = onion.on
+          ;  onion.onion.with = onion.on.with = onion.onSensor.with
+          =  onion
+        //;  onion.  on ({on:'on'   ,     on: onion.on   })
+          ;  onion.  on ({on: Object, Object: onion.onion})
+
+        ~
+        { on:
+            [ ['on', 'as', 'do']
+            , ['on',       'do']
+            ]
+      //,"on do": onion.on
+        }
+
+        ~
+        { on
+        :  'no@ionify'      //must: sense by id because ~on:[] overrides previous sensors
+        ,  'no@ionify'      //      which causes this sensor to be lost on find.link.share@.
+        :   function on (no)
+              { var space = no.on.our   //must: use this=no@.on since on.our isn't linked
+              ; space.share             //      because find.link.share@ wasn't yet loaded.
+                  ({ link              :
+                      { activate       : onion.activate
+                      , deactivate     : onion.deactivate
+                      , disable        : onion.disable
+                      , ionified       : onion.ionified
+                      , known          : onion.known
+                      , sense          : onion.sense
+                      , sortKnownWords : onion.sortKnownWords
+                      }
+                  ,  to                : (~/will be onion.re.domain/, onion.re.id)
+                  })
+              ; no.no ({on:'no@ionify', no:on})
+              ; space.link (onion)
+              ; space.link (ionified)
+              ; space = onion = ionified = null //performance? memory release?
+              }
+        }
+
+        ionified <= /todo: via .ionifi3d ()/
+
+        ~
+        { get
+          : [   'next.id@ionify',              'id@ionify',  'on.error@ionify'
+            , 'on.errors@ionify', 'find.link.share@ionify',        'no@ionify'
+            ,   'on.aeon@ionify',              'do@ionify',   'on.ions@ionify'
+            , 'on.action@ionify',       'on.storie@ionify',       'use@ionify'
+            ,      'ions@ionify',         'web.log@ionify',           'ions'
+            ]
+        , in: 'sequence'||'order'
+        }
+
+        return true
+      }
+
+, ionifi3d
+:   function ionified ()
+      {/ sense if ionified via any known sensor's .prototype.valueOf.ionified /
+      |/ isolate & confirm at least 1 provides ~get         /
+      |/ save & remove sensor's .prototype.valueOf.ionified /
+      |/ remove   ionified's .valueOf /
+      |/ activate sensor(s)           /
+      |/ activate ionified            /
+      }
+
+, senseInfo
+:   [/ todo: ... /
+    ]
+, sense
+:   { id  :null
+    , link:null
+    }
+
+, activate
+:   function activate (ion)
+      {//if (ion [0] !== '0 . 0') return
+      ;  var ionify = activate.with
+      ;  ionify.senses && (ionify.senses != ionify.sense) && ~ionify
+      }
+, deactivate
+:   function deactivate (ion)
+      {  delete Array .prototype.valueOf
+      ;  delete Object.prototype.valueOf
+      ;  deactivate.with.unlink()
+      }
+, disable
+:   function disable (ion)
+      { var ionify        = disable.with
+          ; ionify.senses = ionify.sense
+          ; ionify.sense  = {'0 . 0':ionify.activate}
+      }
+
+, known
+:   { id  : []
+    , link: []
+    , on:
+        [ { act:  'on'
+          , set: ['on']
+          , in : function within (ion)
+                    { return 'on' in ion
+                    }
+          }
+        ]
+    }
+
+, on:
+    function on (ion)
+      { if ( !ion  ||  !('on' in ion)  ) return ion
+      ; if ('function' == typeof ion.on) return  on.with.onSensor (ion)
+
+      ; var debug = []
+      ; debug.push ([ion.re && ion.re.id, "on:", ion.on, JSON.stringify (ion.on)])
+
+      ; var groups  = ion.on
+      ! Array.isArray (groups) && (groups = [groups])
+      ; var ionify  = on.with
+          , has     = ionify.hasKnownWord
+          , known   = ionify.known
+          , sense   = ionify.sense
+          , id      = ion.re && ion.re.id
+          , next    = -1
+          , last    = groups.length
+          , updated = {}
+          , action
+          , group
+          , test
+          , unknown
+          , word
+          , words
+
+        debug.push (Object.keys (sense))
+
+        while (++next < last)
+          { words = group = groups [next]
+            !Array.isArray  (group) && (words = group = [group])
+            group = group.join (" ")
+
+            unknown = !sense [group]
+            action  =    ion [group]
+            action
+              && ( sense [group] = action )
+              && ! ionify.ionified [typeof action]
+              && ( on.our
+                 ? on.our.find ({find:action, in:ion, as:group})
+                       && ( sense [group] = ion [group ])
+                 :(action = sense [group] = ion [action])
+                 )
+                 ;
+
+            debug.push (["knows?", id, group, group in sense])
+
+            if (!action || !unknown) continue
+
+            test  = 'return "'+ words.join ('" in ion && "') +'" in ion;'
+            test  =  new Function ("ion", test)
+            group = {act:group, set:words, in:test||has}
+
+            for (var w=0, W=words.length; w < W; w++)
+              { word  =  words [w]
+               !known   [word]  &&  (known [word] = [])
+                known   [word].push (group)
+                updated [word]   =   true
+              }
+          }
+
+        ionify.sortKnownWords (updated)
+      ~ {debug: (debug.push ([id].concat (groups)), debug.join ('\n'))}
+        return ion
+      }
+
+, hasKnownWord
+:   function hasKnownWord (ion)
+      { var ws = this.act
+          , w  = ws.length
+      ; while (w --> 0 && ws [w] in ion)
+      ; return w <=- 1
+      }
+
+, sortKnownWords
+:   function sortKnownWords (updated)
+      { var ionify     = sortKnownWords.with || (sortKnownWords == this.sortKnownWords) ? (sortKnownWords.with = this) : null
+          , known      = ionify.known
+          , descending = ionify.sortKnownWordsDescending
+          , word
+
+        !updated && (updated = known)
+
+        for (word in updated)
+          updated.hasOwnProperty (word) && known [word].sort (descending)
+      }
+
+, sortKnownWordsDescending
+:   function descending (known, nextKnown)
+      { return nextKnown.set.length - known.set.length
+      }
+
+
+, ionifiedInfo
+:   [ /note: Use with typeof ion + ion.constructor.name/
+    , /todo: Auto-update as types are deactivated/
+    , /todo: Enable +{ionified: typeof thing} = 1:true|0:false/
+    ]
+
+, ionified
+:   { function: true
+    }
+
+
+, onionInfo
+:   [ /todo: enable ionify's ions to set sensed order of action terms /
+    , /todo: sense => ArrayMap to preserve order & fast lookup.       /
+    , /idea: log all matched actions & their results?                 /
+    , /idea: disable activated words, enable after all matches        /
+    ,(/idea: loop through ion's terms instead of known?               /)
+    , /todo: Ignore similar actions after match: ~get ~get.then	      /
+    ]
+
+, onion
+:   function ion (object)
+      { var id
+          , link
+          , ionify      = ion.with
+        //, ionified    = ionify.ionified
+          , sense       = ionify.sense
+          , debug       = []
+          , our         = ion.our
+          ; object || (object = this)
+
+      //; our && our/*ionify*/.id  (object)
+        !(object.next && object.id) && !(  'id' in object) && (object.id   = id   = true) ///*our && our*/ionify.link (object)
+        !(object.next && object.id) && !('link' in object) && (object.link = link = true) ///*our && our*/ionify.link (object)
+        ; debug.push ("onION:", object.re ? object.re.id : "anonymous")
+
+        var from = ion.caller;
+        object.re && (object.re.from || (object.re.from = from && from.with && from.with.re && from.with.re.id))
+        from && (from != ion) && debug.push ("from", object.re && object.re.from)
+
+        var results = 0
+          , known   = ionify.known
+          , skip    = {}
+          , group   , groups
+          , word    , words
+          , result
+          ;
+
+        for (word in known)
+          { if (! known.hasOwnProperty (word)    ) continue
+            if (word in skip || !(word in object)) continue
+            groups = known [word]
+
+            for (var g=0, G=groups.length; g < G; g++)
+              { group = groups [g]
+                if (!group.in (object)) continue
+                words   =  group.act
+                result  =  typeof  sense [words]      == 'function'
+                             ?  (  sense [words].with !=  object) //bug?: don't self-activate sensor
+                                && sense [words].call    (object, object)
+                           //:  ~{find:words=sense[words], in:sense} && sense [words] (object)
+                           //:  sense [sense [words]] (object)
+                             :  (  our && our.ionified [typeof [sense [words] ]])
+                                    ? ~ sense [words]
+                                    : ( our && our.find &&  our.find ({find:sense[words], in:sense, as:words}))
+                                          ?   sense [words].call   (object, object) //todo: resolve (sense [words]) to function or act ion
+                                          :   console.log ("missing sensor: ", words, ":", sense[words])
+                                          ||  sense [sense [words]].call   (object, object)
+                                          ;
+                results += 1
+                words   =  group.set
+                for (var w=0, W=words.length; w < W; skip [words [w++]] = true);
+                break
+              }
+          }
+
+          id   && delete object.id
+          link && delete object.link
+
+        ! object.debug && !(object.next && object.id) && ~{debug:debug} //bug! causes stack overflow
+          return results == 1 ? result : object
+      }
+
+
+, onSensor$
+:   { core: {Function:'function', Object:'object'}
+    , name: (/function\s+(.*)\s*\(/)
+    , undo: {}
+    }
+
+, onSensor
+:   function onSensor (ion)
+      { var on        = onSensor.with || (onSensor.with = onSensor == this.onSensor ? this : null)
+          , known     = on.ionified
+          , onSensor$ = on.onSensor$
+          , core      = onSensor$.core
+          , name      = onSensor$.name
+          , undo      = onSensor$.undo
+          , Type      = ion.on
+          , type      = Type.name ||  String (Type).match (name)[1]
+          ; undo [type]            =  Type.prototype.valueOf
+          ; Type.prototype.valueOf =  ion [type]
+          ; known [type]           =  true
+          ; known [core [type]]    =  !!core [type]
+
+      ~ {debug: ["onSensor", type, JSON.stringify (known)] }
+        return true
+      }
+}
+;;
+
+;
++
+{ re:
+    { id: "next.id.0.1.2017.04.07-07@ionify"
+    , is: "An ion that generates sequential ids on-demand"
+    , by:
+        [ {creator: "mike.lee@iskitz", at: "2016.09.10-07"}
+        , {authors:     "team@ionify", at: "2017.04.07-07"}
+        ],
+    },
+
+  debug : false,
+  on    : [["next", "id"]],
+
+  MAX: Number.MAX_SAFE_INTEGER ||  9007199254740991,
+  MIN: Number.MIN_SAFE_INTEGER || -9007199254740991,
+  ids: {},
+
+  "next id":
+    function onNextId (ion)
+      {  var th1s = onNextId.this
+           , ids  = th1s.ids
+           , name = ion.next
+           , f0r  = ion.id.re || (ion.id.re = {})
+           , id   = ids [name]
+           ;
+           ; (id >= th1s.MAX) && (id = ids [name] = null)
+           ;      isNaN (id)  && (id = ids [name] = th1s.MIN)
+           ; f0r.id = name + '.' + id
+           ; return ids [name]++
+      }
+}
+; //+next.id@ionify;
+
+;
+~
+{ re:
+    { id:  'id@ionify'
+    , by: ['mike.lee', 'team']
+    , at:  'ionify.net'
+    , on:  -4.200709
+    , to:  -8.20190104
+    , is:  -0.1
+    , it:
+        [" ensures that all ionified objects have an re.id.                  "
+        ," sets an object's re.id value as a member mapped to its object re. "
+        ," sets missing re & re.id on an object with a domain-named member.  "
+        ," sets missing re on a object.                                      "
+        ," sets missing re.id via ~next.id when possible.	                 "
+        ]
+        ,
+      we:
+        [" will ensure that ~debug & ~next.id don't keep using setID.nextID. "
+        ," like linking this ion although it doesn't currently rely on it.   "
+        ]
+    },
+
+  on:
+    ['id'
+    ],
+
+  id:
+    function setID (ion)
+      { if (!ion.id || typeof ion.id != 'boolean') return
+
+        var id =  ion.hasOwnProperty ('re')
+               ?  ion.re.id
+               : (ion.re = {id: void 0}).id
+               ;
+
+        if (id || isFinite (id))
+          return  ion [id]
+               ?       id
+               : (ion [id] = ion.re).id
+               ;
+
+        for (var word in ion)
+          if (~ word.search (/@/))
+            { var    re  = ion [id = ion.re.id = word]
+            ; typeof re == 'object'
+                &&  (ion .re = re)
+                && !('id' in   re)
+                &&  ( re .id = id)
+            ; return id
+            }
+
+        !ion.re.id && !(ion.next && ion.id) && !ion.debug && ~{next:'ion', id:ion}
+
+        !   ion.re.id
+      //&& !ion.debug || (ion.re.as != 'logger')
+      //&& (console.log ("no ~next.id; debug?", !!ion.debug, "using "+setID.nextId),true)
+        && (ion.re.id = 'ion.'
+                      + (setID.nextId ? ++setID.nextId
+                                      :  (setID.nextId = 1)))
+                                      ;
+        id = ion.re.id
+        !ion [id] && (ion [id] = ion.re)
+        return id
+      }
+}
+;;
+
+
+;
+
+   ~   ~
++['0 . 0']+    / on.error@ionify activating... /
+     -
+
+{ re:
+    { id: "on.error.0.1.2017.04.07-07@ionify"
+    , is: "An ion that handles activated errors; i.e. +Error"
+
+    , by:
+        [ {creator: "mike.lee@iskitz", at: "2007.09-04"   }
+        , {authors:     "team@ionify", at: "2017.04.07-07"}
+        ]
+
+    , stories:
+        [/note: .../
+        ,/todo: .../
+        ]
+    },
+
+
+  on:
+    Error
+    ,
+
+
+  Error:
+    function onError (ion)
+      {  throw ion || this
+      }
+
+
+} +/ on.error@ionify activated! /
+
+;;
+
+;
+~
+{ re:
+    { id:  'on.errors@ionify'
+    , by: ['mike.lee', 'team']
+    , at:  'ionify.net'
+    , on:  -4.200709
+    , to:  -7.20190328
+    , is:  +0.1
+    , it:
+        [/ converts messages to Error objects /
+        ,/ usage:                             /
+        ,     { errors
+              :   { error1: "1st error"
+                  , error2: "2nd error"
+                  , error3: "3rd error"
+                  }
+              }
+        ]
+    , we:
+        [/ will ... /
+        ]
+    }
+
+, on:'errors'
+,     errors
+:       function onErrors (ion)
+          { var next = ion.errors
+            for (var error in next)
+              next [ error ] = new Error (next [error])
+          }
+}
+;;
+
+;
+~
+{ re:
+    { id:  'find.link.share@ionify'
+    , by: ['mike.lee', 'team'  ]
+    , on: { 200709   : -4      }
+    , to: { 20190415 : -7.0159 }
+    , at:  -0.1
+    , it:" provides context via ~link which ensures ions' object-type members can   "
+        +" access their containing ion, ~share for sharing things via domains,      "
+        +" optionally aliased data and-or functionality, and ~find.in for resolving "
+        +" names to ions.                                                           "
+    , we:
+        [" were updating ~link & ~share to use .with vs .our  "
+        ," were implementing ~link.to & ~link.as              "
+        ," will apply unlink when ~link.to is falsey          "
+        ," want to combine ~share & ~link.to                  "
+        ," want re.is:version(s), re.at:@domain(s), re.it:about & re.we:plan(s).    "
+        ," want all hip & hip-hop ions to valueOf:hiphop --> start --> valueOf:hop. "
+        ," like idea of queueing ~find's then doing once ~find's available          "
+        ," like that prototypes could enable automatic context sharing within ions. "
+        ]
+    }
+
+, on
+:   [ [ 'link',   'to'      ]
+    , [ 'link',   'as'      ]
+    , [ 'link'              ]
+    , [ 'find',   'in', 'as']
+    , [ 'find',   'in'      ]
+    , ['share'              ]
+    ]
+
+, valueOf
+:   function hiphop ()
+      { this.ionify ()
+      ; delete this.valueOf
+      ~ this
+      }
+
+, ionify
+:   function ionify ()
+      { this.link   ()
+      ; this.share
+            ({ link
+             :   { find: this.find
+                 ,  link: this.link
+                 , share: this.share
+                 , space: this.getSpace
+                 }
+             , to: this.re.id   // 👨🏾‍💻re.id.domain auto-populated from re.id
+            })
+      }
+
+,"find in as":"find"
+,"find in"   :"find"
+, find
+:   function find (ion)
+      { var name      = ion.find
+      ,     to        = ion.in
+      ,     as        = ('as' in ion) ? ion.as : name
+      ,     ionified  = find.our.ionified
+      ,     context   = find.with
+      ,     found
+      ,     last
+
+      ; while
+          ( last != to)    // bug? might infinitely loop on circular .with's | .our's
+          { last  = to
+          ; if ( found   =  context.findName ({find:name, in:to})       ) break
+          ; if ( to.with && ionified [typeof (found = to.with [name]) ] ) break
+          ; if ( to.our  && ionified [typeof (found = to.our  [name]) ] ) break
+          ; if ( to.with ){ to = to.with } else break
+          }
+
+      ; found  && (ion.in [as] = found)
+      ; return !! found
+      }
+
+, findName
+:   function name (ion)
+      { var thing    = ion.find
+      ,     place    = ion.in
+      ,     ionified = name.our.ionified
+      ,     tried    = {}
+      ; while
+          (!tried [thing] && thing in place)
+          { tried [thing]  = true
+        //; console.log (`~find ${thing} ...`)
+          ; thing = place [thing]
+          ; if (ionified  [typeof thing]) return thing
+          }
+      ; return false
+      }
+
+, linkInfo
+:   [" were implementing .our.* --> .with.doma.in.*               "
+    ," must move id@domain matching to its own ion then share it  "
+    ," like id@domain matching with /(.*)([-+]\d+.*^@)|(@.*)/     "
+    ," like .with .doma .in.expanded.name.of.shared.thing:        "
+    +"      .with$.doma$.in.expanded auto-added $'s on conflicts  "
+    ," will enable   + {link:ion, to:thing}                       "
+    ," like enabling ~ {link: true|false } with true as default   "
+    ," like enabling ~ {link: [ion, object, more])                "
+    ," like enabling ~ {link:ion, as:{member:thing}}              "
+    ]
+,"link as":"link"
+, link
+:   function link (ion)
+      { ion || (ion = link.with || (link.with = (link == this.link) && this))
+
+        var property
+          , thing
+          , debug = []
+          , id    = (ion.re ? ion.re.id : null) || 'ion'
+          , space = link.with.getSpace (id)
+          ; id    = id.replace (/(.+)(@|\.\d\.).*/, '$1')
+          ;
+
+        for (property in ion)
+          { thing = ion [property]
+            if (!thing)                                                 continue
+            if ((typeof thing != 'function') && !Array.isArray (thing)) continue
+            if (!ion.hasOwnProperty (property))                         continue
+          ! thing.with    &&              (thing.with = ion)
+          ! thing.our     &&  space    && (thing.our  = /*|| ion ||*/ space)
+          ; (id != 'ion') && !ion.debug && debug.push ("linked "+ id +'.'+ property)
+          }
+
+      ! ion.debug && ~{debug:debug}
+        return true
+      }
+
+, unlinkInfo
+:   [ "todo: enable +{unlink: ion, from: thing}"
+    ]
+, unlink
+:   function unlink (ion)
+        { ion || (unlink == this.unlink) && (ion = this);
+
+        var property
+            , thing
+            , id = (ion.re ? ion.re.id : void 0) || "ion"
+            ; id = id.replace (/(.+)(@|\.\d\.).*/, "$1")
+            ;
+        for (property in ion)
+            {  thing = ion [property]
+            ;  (typeof thing == "function") && (thing [id] == ion) && (delete thing [id])
+            }
+        }
+
+, shareInfo
+:   [" ... "
+    ," will fix ~share:'*' to resolve shared things; now assumes ~do:[{share:'*'}] "
+    ," will create +{share: {thing:..., other:...}, with:[ion.ids]} "
+    ]
+,"link to":"share"
+, share
+:   function share (ion)
+      { var thi$   = share.with || (share == this.share ? this : null)
+          , spaces = thi$.spaces
+          , things = ion.link ==  '*' ? ion.with.with  || ion.with || ion : ion.to ? ion.link : ion.share
+          , to     = ion.to   || (ion.re && ion.re.id) || ''
+          , space  = thi$.getSpace (to)
+          ;
+        for (var thing in things)
+          { if ((('boolean' == typeof ion [thing]) && !ion [thing])
+            ||  ((thing == 're') && !ion.re))
+            continue
+          ; space [thing]
+              = typeof (thing = things [thing]) == 'string'
+              ? ion    [thing]
+              :         thing
+          }
+      }
+
+, spacesInfo
+:   [ "note: ion-domain-based spaces"
+    , "todo: ..."
+    ]
+, spaces
+:   { null: {}
+    }
+
+, getSpaceInfo
+:   [ "note: Returns & if needed, creates a space based on id's @domain"
+    , "todo: ..."
+    ]
+, getSpace
+:   function getSpace (id)
+      { var share  = getSpace.with || (getSpace == this.getSpace ? this : null)
+          , spaces = share.spaces
+          , domain = id.match (/@(.*)/)
+          ; domain = domain && domain [1]
+          ;
+        return spaces [domain] || (spaces [domain] = {})
+      }
+}
+;;
+
+;
+~
+{ re:
+    { id:  'no@ionify'
+    , by: ['mike.lee', 'team']
+    , at:  'ionify.net'
+    , on:  -4.200709
+    , to:  -7.20180330
+    , is:  -0.1
+    , it:
+        [" implements ~on.no which disables a sensor mapped to one or more "
+        +" term(s).                                                        "
+        ]
+    , we:
+        [" like the idea of resolving ~ {no: 'this.with'}    "
+        ," must handle multiple actions using the same term. "
+        ]
+    }
+, on:
+    [ ['on', 'no']
+    ]
+,'on no'
+:'no'
+, no:
+    function no (sensor)
+      { if (!sensor.no && !('no' in sensor)) return sensor
+
+        var  acts = sensor.no
+          ; !Array.isArray (acts) && (acts = [acts])
+          ;
+        var act
+          , term
+          , next  = -1
+          , last  = acts.length
+          , known = no.our.known
+          , sense = no.our.sense
+          ;
+        while (++next < last)
+          { term  =   sensor.on
+          ; act   =   sense [term]
+          ; act   && (act == acts  [next])
+                  &&  delete sense [term]
+                  &&  delete known [term]
+          }
+      }
+}
+;;
+
+;
+~
+{ re:
+    { id:  'on.aeon@ionify'
+    , by: ['mike.lee', 'team']
+    , at:  'ionify.net'
+    , on:  -4.200709
+    , to:  -7.20190413
+    , is:  -0.1
+    , it:
+        [" senses all array-expressed ions like:                   "
+        +"   ['~ . ~']  &  [{0 : 0}]  &  [/d(~ . ~)b/]  &  [0 . 0] "
+        ]
+        ,
+      we:
+        [" were debugging ~find'ing aeon sensors like aesop "
+        ," want to move aesop@ to its own ion               "
+        ," ... "
+        ]
+    },
+
+  valueOf
+  : function hiphop ()
+     { this.my.link.with = this.my.sensors.with = this
+     ; this.my.link ()
+     ; delete this.valueOf >> this
+     },
+
+  my:
+    { sensors
+    :   { string    : 'aesop'
+      //, number    : ''
+      //, boolean   : ''
+      //, null      : ''
+      //, undefined : ''
+        }
+    , link
+    :   function link (ion)
+          { ion || (ion = link.with)
+            for (var  member  in ion)
+              { member = ion [member]
+              ; if (member.my || ('my' in member)) continue
+              ; member.my = ion.my
+              }
+          }
+    },
+
+  on: Array
+    , Array
+    : function aeon (array)
+        { array ||  (array = this)
+
+        ~ {debug: ["~[", array ,"]"]}
+
+          var AEON    = aeon.with
+            , sensors = AEON.my.sensors
+          //, aesop   = aeon.with.aesop
+            , ionified = aeon.our.ionified
+            , next    = -1
+            , last    = array.length
+            , thing
+            , sense
+            , type
+          //; our.ionified ['string'] = true
+            ;
+
+          while (++next < last)
+            { thing =   array [next]
+            ; type  =  typeof  thing
+            ; sense = sensors [type]
+            ; if (!thing)      continue
+            ; if (ionified    [typeof thing]  && !('with' in thing)) thing.with = array
+            ; if (!sense)     {~thing; continue }
+            ; if (!ionified   [typeof sense])
+                { ~{find:sense, in:sensors ||AEON, as:type}
+                ;   sense = (sensors ||AEON) [type ||sense]
+                ;   if (!sense)
+                      { ~{warn:`aeon: couldn't sense ${type} ~${JSON.stringify (thing)}`}
+                      ;   continue
+                      }
+                }
+          //; if (!our.ionified [type])  continue
+          //;/*if (!thing.with && !('with' in thing))*/ (thing.with = array)
+          //; if (+thing  && thing.did)  continue
+            ; sense.next = next
+            ; sense (array)
+            }
+
+          return next / array.length
+        },
+
+  aesopInfo
+  : [" aesop: array-expresses statement|sentence|storie or phrase|pattern "
+    ," will find known words in each sentence "
+    ," will interpret via sentence(s), paragraph(s), chapter(s) + book(s) "
+    ," will handle ['0 . 0'] via sense [thing] && sense [thing] (thing)   "
+    ," will use tbd name-to-ion resolver      "
+    ],
+
+  aesop
+  : function aesop (ion)
+      { ion || (aesop == this.aesop) && (ion = this)
+
+      ; var phrase = ion [aesop.next]
+      ; aesop.next = void 0
+      ; phrase && ~{debug: ["+[", phrase ,"]"]}
+
+      ; var sense     = (ion.with && ion.with [phrase]) //|| (ion.ion && ion.ion [phrase])
+        //, shared    = aesop.our
+        //, aesop     = aesop.with
+        //, ionified  = shared.ionified
+          ;
+      ! sense                      && ~{find:phrase, in:ion} && (sense = ion[phrase])//(sense = shared .sense [phrase])
+    //! ionified [typeof sense]    && (sense = shared [sense])
+      ; typeof sense == "function"  ?   sense  (ion) : ~sense
+      }
+}
+;;
+
+;
++
+{ re:
+    { id: "do.0.1@ionify.net"
+    , is: "ionify's do action: activates ions, functions + methods"
+    , by:
+        [ {creator: "mike.lee@iskitz",  at: "2007.09-04",     in: "forest-hills.new-york.usa.earth"}
+        , {authors:     "team@ionify",  at: "2017.04.29-07",  in:   "san-jose.california.usa.earth"}
+        ]
+    }
+
+    ,
+  on: "do"
+
+    ,
+  errors:
+    { ionExpected: "+do expects an ion or ion id"
+    }
+
+    ,
+  doStories:
+    [/ todo: Enable +{on: "" || [], do: ...}                      /
+    ,/ todo: ionified [typeof todo] > +{is:todo, not:"ionified"}  /
+    ]
+    ,
+  do:
+    function onDo (ion)
+      { ion || ~onDo.ion.errors.ionExpected
+      
+        var DO   = onDo.ion
+          , todo = ion.do
+
+        todo && !DO.ionified [typeof todo] && (todo = ion [todo])
+        return +todo
+      }
+
+    ,
+  ionified:
+    { Array    :  true
+    , boolean  : !true
+    , Error    :  true
+    , function :  true
+    , Function :  true
+    , number   : !true
+    , object   :  true
+    , Object   :  true
+    , RegExp   :  true
+    , string   : !true
+    , undefined: !true
+    }
+
+} //+do@ionify
+;;
+
+;
+~
+{ re:
+    { id:  'on.ions@ionify'
+    , by: ['mike.lee', 'team']
+    , at:  'ionify.net'
+    , on:  -4.200709
+    , to:  -8.20190105
+    , is:  -0.1
+    , it:
+        [" senses ions@domain ions & applies & shares their settings.  "
+        ," ... "
+        ]
+    , we:
+        [" were doing its initial implementation. "
+        ," will set ~on to sense id@'s.           "
+        ," will only override domains matching ions@'s domain.         "
+        ," will only override domains when ions@'s domain is verified. "
+        ," ... "
+        ]
+    }
+
+, on
+:  'ions@' // and.or {as:'setup'}
+,  'ions@'
+:   function onions (setup)
+      { var our     = onions.our
+          , domain$ = our.domains || (our.domains = {})
+          , path$   = our.paths   || (our.paths   = {})
+          , domains = setup.domains
+          , paths   = setup.paths
+          , domain  = setup.re.id.match (/@(.*)$/) [1]
+          , next
+          ;
+
+      ~ setup.logging
+
+        for (next in domains)
+          { domain$ [next] = domains [next]
+          }
+
+        path$  =  path$ [domain]
+              || (path$ [domain] = {})
+               ;
+
+        for (next in paths)
+          { path$ [next] = paths [next]
+          }
+      }
+}
+;;
+
+;
+~
+{ re:
+    { id:  'on.action@ionify'
+    , by: ['mike.lee', 'team']
+    , at:  'ionify.net'
+    , on:  -4.200709
+    , to:  -7.20190330
+    , is:  -0.1
+    , it:
+        [" ionifies functions; e.g. enabling ~go which does go()                       "
+        ," provides access to the global object via ~function(){ return this }         "
+        ]
+    , we:
+        [" will create or identify any existing function id; read ECMA-262 [] spec.    "
+        ," need to fix ~[777].pop = ~[777].prototype.pop() = TypeError; this != [777]. "
+        ," like to sense objects without their own method then create own method with  "
+        +"    .ion=object that calls its inherited method with this=ion.               "
+        ," like that ~Function + this.apply() can do interesting things like           "
+        +"    recursively applying itself! Not sure when that'd be valuable but        "
+        +"    interesting to explore 👨🏾‍💻🤓:                                            "
+        +             Object.prototype.toString.call ([777].__proto__)
+        ]
+    }
+
+, as:'sensor'
+, on: Function
+,     Function
+:       function act (ion)
+          {  ion || (ion = this)
+          ;  var result = ion() //ion.call (ion.with)
+          ~  {debug: ['~', ion.name || 'anonymous', '() : ', result]}
+          ;  return result
+          }
+}
+;;
+
+
+;
+
+   ~   ~
++['0 . 0']+
+     -
+
++
+/on.storie@ionify activating.../
++
+
+{ re:
+    { id: "on.storie.0.1.2017.04.09-07@ionify"
+    , is: "An ion that handles activated stories: "
+        + "string template or regular ion expressions; "
+        + "i.e. +/.../"
+
+        ,
+      by:
+        [ {creator: "mike.lee@iskitz", at: "2016.11.16-08"}
+        , {authors:     "team@ionify", at: "2017.04.09-07"}
+        ]
+
+        ,
+      stories:
+        [ /todo: Enable inline + referrable notes + todos via ion.methodStories:[storie(s)]/
+
+        , /todo: Disable eon during storie evaluations to enable stories with sample code!/
+
+        , /todo: .../
+        ]
+    },
+
+
+  on: RegExp
+    ,
+
+
+  RegExp:
+    function onStorie (ion)
+      {  return true
+      }
+
+
+}
+
++
+/on.storie@ionify activated!/
+;;
+
+;
+/use@ionify activating.../
++
+
+{ re:
+    { id: "use.0.1@ionify"
+    , is: "An action enabling the use of an ion's thing(s)"
+    , by: "mike.lee@ionify"
+    , at: "2017.04.16-07...2007.09-04"
+        ,
+      stories:
+        [ /note: +get.use.in.as: helps wakatta + is like ajile/
+                  +
+                  { use: "thing"    || ["thing", "...", "other.thing"]
+                  ,  in:  this.item || "ion.id"
+                  ,  as: "alias"
+                  }
+        , /todo: Confirm ion id for each +on:use before acting/
+        , /todo: Maybe support a "from" parameter?/
+                  +{use:"show", from:"wakatta.view", in:"game"}
+        , /todo: Enable using with ion ids/
+                  +{use:"+wakatta.view.show", in:"+wakatta.game"}
+                  +{use:"+view.thing", as:"+game.view.thing"}
+                  +{use:"+view.show", as:"show", in:"+game"}
+        ]
+    }
+
+    ,
+  on:
+    [ ["use", "as", "in"]
+  //, ["use", "in"]
+  //,  "use"
+    ]
+
+    ,
+  errors:
+    { badAs: "Can't use 'as' with more than 1 'use'"
+    , badIn: "Can only use 'in' with objects"
+    }
+
+    ,
+  getOnUseStories:
+    [ /note: A helper function for using ready-for-use things/
+    , /todo: .../
+    ]
+    ,
+  getOnUse:
+    function getOnUse (use)
+      { return function onUse (ion)
+          { use.in [use.as] = ion [use.use]
+          }
+      }
+
+    ,
+  okIn:
+    { function: true
+    , object  : true
+    }
+
+    ,
+  "use as in stories":
+    [ /note: Enables using ion things within objects via aliases/
+    , /todo: Switch "use" + "as" loops? Might not have an "as"/
+    , /todo: Enable +{use: "thing" || ["..."], in: [{}]} /
+    , /todo: Enable +{use: "thing", as:["alias", "..."], in:{}} /
+    , /todo: Handle +{use: thing(s), from:ion}/
+    ]
+    ,
+  "use as in":
+    function useAsIn (ion)
+      { var USE     = useAsIn.ion
+          , errors  = USE.errors
+          , onUse   = USE.getOnUse
+          , validIn = USE.okIn
+          , isArray = Array.isArray
+
+        isArray (ion.as) && isArray (ion.use) && ~errors.badAs
+        validIn [typeof ion.in]               || ~errors.badIn
+
+        var use    = isArray (ion.use) ? ion.use : (ion.use = [ion.use])
+          , as     = isArray (ion.as)  ? ion.as  : (ion.as  = [ion.as])
+          , within = isArray (ion.in)  ? ion.in  : (ion.in  = [ion.in])
+          , next   = within
+          , last   = next.length
+          , on
+
+        for (var inThing = -1; ++inThing < last;)
+          { within  = next [inThing]
+            validIn [typeof within] || ~errors.badIn
+            asThing = -1
+
+                for (var  aliases = as.length; ++asThing < aliases;)
+              { for (var     uses = use.length
+                    ,       thing = -1
+                    ,        name
+                    ;     ++thing < uses;
+                    )
+                    { name        = use [thing]
+                      on          = {on:name}
+                      on  [name]  = onUse ({use:name, as:as[asThing] || name, in:within})
+                      use [thing] = on
+                    }
+                ~use
+              }
+          }
+
+        //; ("from" in use) || (use.from = from)
+        return true
+      }
+
+
+    ,
+  "use in stories":
+    [ /note: Enables using things within a specific object/
+    ]
+    ,
+  "use in":
+    function useIn (ion)
+      { return useIn.ion ["use as in"] (ion);
+      }
+
+
+    ,
+  useStories:
+    [ /note: Enables using things within the current ion/
+    , /todo: .../
+    ]
+    ,
+  use:
+    function onUse (ion)
+      { ion.in = ion
+      ; onUse.ion ["use as in"] (ion)
+      }
+}
+
++
+/use@ionify activated!/
+;;
+
+;
+~
+{ re:
+    { id: 'ions@ionify'
+    , by: 'mike.lee'
+    , at: 'ionify.net'
+    , in:
+        [ 'forest-hills.new-york.usa.earth'
+        ,   'san-jose.california.usa.earth'
+        ]
+    , on: -4.200709
+    , to: -7.20190413
+    , is: -0.1
+    , it:
+        [" configures ionify "
+        ," defines ion domains, paths & more "
+        ," provides domain lists as backup & performance options "
+        ]
+    , we:
+        [" like ions@ionify in main directory with hosts like web@ionify "
+        ]
+    },
+
+  do:
+    [ { link  : '*'
+      , to    : '@ionify'
+      , re    : false
+      , do    : false
+      }
+    ],
+
+  domains
+  : { verify : true
+    , resolve:
+        { ''             : '@ionify'
+        , '@'            : '@ionify'
+        , '@(.+)\.ionify': '@ionify/$1'
+        , '@ionify':
+              [ 'cdn.jsdelivr.net/gh/ionify/ionify@public/'
+              , 'ionify.github.io/ionify/'
+              , 'ionify.glitch.me/'
+              , 'ionify.net/'
+              , 'ionify.org/'
+              ]
+        }
+    },
+
+  paths
+  : {  ions: './ions/'
+    ,  team: './team/'
+    , notes: './notes/'
+    , tests: './tests/'
+    , tools: './tools/'
+    },
+
+  logging
+  : { debug : false
+    , error : true
+    , info  : false
+    , log   : false
+    , warn  : true
+    }
+}
+;;
+
+;
+/web.log activating.../
++
+
+{ re:
+    { id: "log.0.1.2017.04.15-07@ionify"
+    , is: "web-based logging for ionify"
+
+        ,
+      by:
+        [ {creator: "mike.lee@iskitz", at: "2007.09-04"   }
+        , {authors:     "team@ionify", at: "2017.04.14-07"}
+        ]
+
+        ,
+      stories:
+        [ /todo: Create log@ + move console + all +logging there/
+        , /todo: Update to only use alert() on iOS/
+        , /todo: works(): only throw noConsole if no alert() /
+        ]
+    }
+
+    ,
+  on:
+    [ "error", "warn", "log", "info", "debug"
+    ]
+
+    ,
+  errors:
+    { noAlert   : "log@ionify needs the window.alert() API"
+    , noConsole : "log@ionify needs the console.log() API"
+    }
+
+    ,
+  do:
+    [ {debug:true}
+    , "works"
+    ]
+
+    ,
+  works:
+    function works ()
+      {   var error = works.this.errors
+      ;   (typeof  console == "undefined") && ~error.noConsole
+      ;   (typeof    alert == "undefined") && ~error.noAlert
+      ;   return true
+      }
+
+    ,
+  debug:
+    function debug (ion)
+      { ion.as  = "debug"
+      ; ion.log = ion.debug
+      ; debug.this.log (ion)
+      },
+
+
+  error:
+    function logError (ion)
+      { ion.as  = "error"
+      ; ion.log = ion.error
+      ; logError.this.log (ion)
+      ~ new Error (ion.error)
+      },
+
+
+  info:
+    function logInfo (ion)
+      { ion.as  = "info"
+      ; ion.log = ion.info
+      ; logInfo.this.log (ion)
+      },
+
+
+  log:
+    function log (ion)
+      {/* Causes an infinite loop log...onObject...debug...log
+          Maybe move logging to own flow | queue | thread so it
+          won't interupt other ion handling...
+
+        +/ ion: +{log:thing} logs some thing    /
+        +/ ion: +{log: true} enables  logging   /
+        +/ ion: +{log:false} disables logging   /
+        +/ ion: +{debug:...} same as +{log:...} /
+        +/ ion: +{error:...} same as +{log:...} /
+        +/ ion: +{ warn:...} same as +{log:...} /
+       */
+
+        function cons0le (ion)
+          {  sense (ion)
+          && console [level] (id + ": " + String (ion.log))
+          }
+
+        function popup (ion)
+          {  sense (ion)
+          && alert (id + icon[level] + String (ion.log))
+          }
+
+        function sense (ion)
+          { id         =  ion.re.from || web.re.id
+          ; level      =  ion.as      || "log"
+          ; ("boolean" == typeof ion [level]) && (sense [level] = ion [level])
+          ; return sense [level]
+          }
+
+        var icon =
+            { debug: "🐛"
+            , error: "❌"
+            ,  info: "💡"
+            ,   log: "📋"
+            ,  warn: "⚠️"
+            }
+
+        var id
+          , level
+          , web         = log.this
+          , iOSPath     = (/^file:\/\/.*\/var\/mobile\//)
+          , noConsole   = document.URL.match (iOSPath)
+          ; sense.debug = false
+          ; sense.error = true
+          ; sense.log   = true
+          ; sense.warn  = true
+          ; (web.log    = noConsole ? popup : cons0le) (ion)
+      },
+
+
+  warn:
+    function logWarn (ion)
+      { ion.as  = "warn"
+      ; ion.log = ion.warn
+      ; logWarn.this.log (ion)
+      }
+
+}
+
++
+/web.log@ionify activated!/
+;
+//# sourceMappingURL=/sm/4fe62e8ee2ca6a8a52b370fe6d9eb5f10315a212796ba13e1b87f3914d3e5fec.map
