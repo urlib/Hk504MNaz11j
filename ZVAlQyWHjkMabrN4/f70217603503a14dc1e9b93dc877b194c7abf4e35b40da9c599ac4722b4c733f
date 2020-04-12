@@ -1,0 +1,47 @@
+<div class="SelectMenu-list select-menu-list" data-filter="author">
+  <div data-filterable-for="author-filter-field" data-filterable-type="substring">
+      <a class="SelectMenu-item" aria-checked="false" role="menuitemradio" href="/jsdelivr/jsdelivr/issues?q=is%3Aopen+is%3Aissue+author%3Ageraltrivyan">
+        <svg class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+        <img class="avatar mr-2" src="https://avatars1.githubusercontent.com/u/6370447?s=40&amp;v=4" width="20" height="20" alt="@geraltrivyan" />
+        <strong class="mr-2">geraltrivyan</strong>
+        <span class="text-gray-light">Igor</span>
+      </a>
+      <a class="SelectMenu-item" aria-checked="false" role="menuitemradio" href="/jsdelivr/jsdelivr/issues?q=is%3Aopen+is%3Aissue+author%3Ajdorfman">
+        <svg class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+        <img class="avatar mr-2" src="https://avatars1.githubusercontent.com/u/398230?s=40&amp;v=4" width="20" height="20" alt="@jdorfman" />
+        <strong class="mr-2">jdorfman</strong>
+        <span class="text-gray-light">Justin Dorfman</span>
+      </a>
+      <a class="SelectMenu-item" aria-checked="false" role="menuitemradio" href="/jsdelivr/jsdelivr/issues?q=is%3Aopen+is%3Aissue+author%3Ajimaek">
+        <svg class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+        <img class="avatar mr-2" src="https://avatars2.githubusercontent.com/u/1834071?s=40&amp;v=4" width="20" height="20" alt="@jimaek" />
+        <strong class="mr-2">jimaek</strong>
+        <span class="text-gray-light">Dmitriy Akulov</span>
+      </a>
+      <a class="SelectMenu-item" aria-checked="false" role="menuitemradio" href="/jsdelivr/jsdelivr/issues?q=is%3Aopen+is%3Aissue+author%3AMartinKolarik">
+        <svg class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+        <img class="avatar mr-2" src="https://avatars3.githubusercontent.com/u/6192491?s=40&amp;v=4" width="20" height="20" alt="@MartinKolarik" />
+        <strong class="mr-2">MartinKolarik</strong>
+        <span class="text-gray-light">Martin Kolárik</span>
+      </a>
+      <a class="SelectMenu-item" aria-checked="false" role="menuitemradio" href="/jsdelivr/jsdelivr/issues?q=is%3Aopen+is%3Aissue+author%3Aspalax">
+        <svg class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+        <img class="avatar mr-2" src="https://avatars3.githubusercontent.com/u/1273733?s=40&amp;v=4" width="20" height="20" alt="@spalax" />
+        <strong class="mr-2">spalax</strong>
+        <span class="text-gray-light">Oleksii Mylotskyi</span>
+      </a>
+      <a class="SelectMenu-item" aria-checked="false" role="menuitemradio" href="/jsdelivr/jsdelivr/issues?q=is%3Aopen+is%3Aissue+author%3Avvo">
+        <svg class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+        <img class="avatar mr-2" src="https://avatars2.githubusercontent.com/u/123822?s=40&amp;v=4" width="20" height="20" alt="@vvo" />
+        <strong class="mr-2">vvo</strong>
+        <span class="text-gray-light">Vincent Voyer</span>
+      </a>
+  </div>
+
+  <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="select-menu-new-item-form js-new-item-form" action="/jsdelivr/jsdelivr/issues?q=is%3Aopen+is%3Aissue" accept-charset="UTF-8" method="get">
+    <input type="hidden" name="q" value="is:issue is:open">
+    <button class="SelectMenu-item d-block js-new-item-value" type="submit" name="author" role="menuitem">
+      <div class="text-bold f5">author:<span class="js-new-item-name"></span></div>
+      <div class="text-gray-light">Filter by this user</div>
+    </button>
+</form></div>
